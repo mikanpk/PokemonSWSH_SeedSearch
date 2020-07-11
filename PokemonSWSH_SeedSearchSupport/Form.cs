@@ -1496,7 +1496,7 @@ namespace PokemonSWSH_SeedSearchSupport
                 ReleaseButton(ButtonType.A);
                 await Task.Delay(50);
 
-                for (int i = 0; i < year - 2000; i++)
+                for (int i = 0; i < year - 1999; i++)
                 {
                     if (cancel_token.IsCancellationRequested)
                     {
@@ -1539,14 +1539,18 @@ namespace PokemonSWSH_SeedSearchSupport
                     ReleaseButton(ButtonType.DOWN);
                     await Task.Delay(50);
                 }
-                PressButton(ButtonType.RIGHT);
-                await Task.Delay(50);
-                ReleaseButton(ButtonType.RIGHT);
-                await Task.Delay(50);
+                for (int i = 0; i < 3; i++)
+                {
+                    PressButton(ButtonType.A);
+                    await Task.Delay(50);
+                    ReleaseButton(ButtonType.A);
+                    await Task.Delay(50);
+                }
+                current_date = new DateTime(2000, 1, 1, 0, 0, 0);
                 PressButton(ButtonType.A);
                 await Task.Delay(50);
                 ReleaseButton(ButtonType.A);
-                await Task.Delay(100);
+                await Task.Delay(200);
 
 
                 if (cancel_token.IsCancellationRequested)
@@ -1893,7 +1897,7 @@ namespace PokemonSWSH_SeedSearchSupport
             ReleaseButton(ButtonType.A);
             await Task.Delay(50);
 
-            for (int i = 0; i < year - 2000; i++)
+            for (int i = 0; i < year - 1999; i++)
             {
                 if (cancel_token.IsCancellationRequested)
                 {
@@ -2021,13 +2025,13 @@ namespace PokemonSWSH_SeedSearchSupport
                     PressButton(ButtonType.A);
                     await Task.Delay(100);
                     ReleaseButton(ButtonType.A);
-                    await Task.Delay(2000);
+                    await Task.Delay(1800);
                     for(int i = 0; i < 4; i++)
                     {
                         PressButton(ButtonType.RIGHT);
                         await Task.Delay(100);
                         ReleaseButton(ButtonType.RIGHT);
-                        await Task.Delay(700);
+                        await Task.Delay(100);
                     }
                     if (cancel_token.IsCancellationRequested)
                     {
