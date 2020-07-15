@@ -148,7 +148,7 @@ namespace PokemonSWSH_SeedSearchSupport
         {
             label_input.Text = s.ToString();
         }
-  
+
         /// 
         /// デバイス入力受付
         /// 
@@ -180,47 +180,6 @@ namespace PokemonSWSH_SeedSearchSupport
 
                     // 取得できない場合、処理終了
                     if (jState == null) { return; }
-
-                    //左パッド入力
-                    if (jState.PointOfViewControllers[0] != jState_before.PointOfViewControllers[0])
-                    {
-                        if (jState.PointOfViewControllers[0] < 0)
-                        {
-                            Invoke(new delegateUpdateDateInput(UpdateDateInput), ButtonType.LEFT, false);
-                            Invoke(new delegateUpdateDateInput(UpdateDateInput), ButtonType.RIGHT, false);
-                            Invoke(new delegateUpdateDateInput(UpdateDateInput), ButtonType.UP, false);
-                            Invoke(new delegateUpdateDateInput(UpdateDateInput), ButtonType.DOWN, false);
-                            Invoke(new delegateUpdateInput(UpdateInput),"");
-                        }
-                        else if (jState.PointOfViewControllers[0] <= 0)
-                        {
-                            Invoke(new delegateUpdateDateInput(UpdateDateInput), ButtonType.UP, true);
-                        }
-                        else if (jState.PointOfViewControllers[0] <= 9500 && jState.PointOfViewControllers[0] > 8500)
-                        {
-                            Invoke(new delegateUpdateDateInput(UpdateDateInput), ButtonType.RIGHT, true);
-
-                        }
-                        else if (jState.PointOfViewControllers[0] <= 18500 && jState.PointOfViewControllers[0] > 17500)
-                        {
-                            Invoke(new delegateUpdateDateInput(UpdateDateInput), ButtonType.DOWN, true);
-
-                        }
-                        else if (jState.PointOfViewControllers[0] <= 27500 && jState.PointOfViewControllers[0] > 26500)
-                        {
-                            Invoke(new delegateUpdateDateInput(UpdateDateInput), ButtonType.LEFT, true);
-
-                        }
-                        else
-                        {
-                            Invoke(new delegateUpdateDateInput(UpdateDateInput), ButtonType.LEFT, false);
-                            Invoke(new delegateUpdateDateInput(UpdateDateInput), ButtonType.RIGHT, false);
-                            Invoke(new delegateUpdateDateInput(UpdateDateInput), ButtonType.UP, false);
-                            Invoke(new delegateUpdateDateInput(UpdateDateInput), ButtonType.DOWN, false);
-
-                        }
-                        
-                    }
 
                     //ZR.ZL
                     if (jState.Z != jState_before.Z)
@@ -335,15 +294,15 @@ namespace PokemonSWSH_SeedSearchSupport
                         {
                             rD = true;
                         }
-                        else if (jState.RotationY < -400)
+                        if (jState.RotationY < -400)
                         {
                             rU = true;
                         }
-                        else if (jState.RotationX > 400)
+                        if (jState.RotationX > 400)
                         {
                             rR = true;
                         }
-                        else if (jState.RotationX < -400)
+                        if (jState.RotationX < -400)
                         {
                             rL = true;
                         }
@@ -417,6 +376,57 @@ namespace PokemonSWSH_SeedSearchSupport
                         }
                     }
 
+                    //左パッド入力
+                    if (jState.PointOfViewControllers[0] != jState_before.PointOfViewControllers[0])
+                    {
+                        bool lL = false;
+                        bool lR = false;
+                        bool lU = false;
+                        bool lD = false;
+                        if (jState.PointOfViewControllers[0] <= -1)
+                        {
+                            Invoke(new delegateUpdateInput(UpdateInput), "");
+                            Invoke(new delegateUpdateDateInput(UpdateDateInput), ButtonType.LEFT, false);
+                            Invoke(new delegateUpdateDateInput(UpdateDateInput), ButtonType.RIGHT, false);
+                            Invoke(new delegateUpdateDateInput(UpdateDateInput), ButtonType.UP, false);
+                            Invoke(new delegateUpdateDateInput(UpdateDateInput), ButtonType.DOWN, false);
+                        }
+                        else if (jState.PointOfViewControllers[0] <= 500 && jState.PointOfViewControllers[0] > -1)
+                        {
+                            Invoke(new delegateUpdateDateInput(UpdateDateInput), ButtonType.LEFT, false);
+                            Invoke(new delegateUpdateDateInput(UpdateDateInput), ButtonType.RIGHT, false);
+                            Invoke(new delegateUpdateDateInput(UpdateDateInput), ButtonType.DOWN, false);
+                            Invoke(new delegateUpdateDateInput(UpdateDateInput), ButtonType.UP, true);
+                        }
+                        else if (jState.PointOfViewControllers[0] <= 9500 && jState.PointOfViewControllers[0] > 8500)
+                        {
+                            Invoke(new delegateUpdateDateInput(UpdateDateInput), ButtonType.LEFT, false);
+                            Invoke(new delegateUpdateDateInput(UpdateDateInput), ButtonType.UP, false);
+                            Invoke(new delegateUpdateDateInput(UpdateDateInput), ButtonType.DOWN, false);
+                            Invoke(new delegateUpdateDateInput(UpdateDateInput), ButtonType.RIGHT, true);
+
+                        }
+                        else if (jState.PointOfViewControllers[0] <= 18500 && jState.PointOfViewControllers[0] > 17500)
+                        {
+                            Invoke(new delegateUpdateDateInput(UpdateDateInput), ButtonType.LEFT, false);
+                            Invoke(new delegateUpdateDateInput(UpdateDateInput), ButtonType.RIGHT, false);
+                            Invoke(new delegateUpdateDateInput(UpdateDateInput), ButtonType.UP, false);
+                            Invoke(new delegateUpdateDateInput(UpdateDateInput), ButtonType.DOWN, true);
+
+                        }
+                        else if (jState.PointOfViewControllers[0] <= 27500 && jState.PointOfViewControllers[0] > 26500)
+                        {
+                            Invoke(new delegateUpdateDateInput(UpdateDateInput), ButtonType.RIGHT, false);
+                            Invoke(new delegateUpdateDateInput(UpdateDateInput), ButtonType.UP, false);
+                            Invoke(new delegateUpdateDateInput(UpdateDateInput), ButtonType.DOWN, false);
+                            Invoke(new delegateUpdateDateInput(UpdateDateInput), ButtonType.LEFT, true);
+
+                        }
+
+                    }
+
+/*
+
                     if (state.IsPressed(Key.Down))
                     {
                         Invoke(new delegateUpdateDateInput(UpdateDateInput), ButtonType.DOWN, true);
@@ -438,18 +448,17 @@ namespace PokemonSWSH_SeedSearchSupport
                         Invoke(new delegateUpdateDateInput(UpdateDateInput), ButtonType.A, true);
                     }
                     else
-                    {
-                        Invoke(new delegateUpdateDateInput(UpdateDateInput), ButtonType.DOWN, false);
+                    { Invoke(new delegateUpdateDateInput(UpdateDateInput), ButtonType.DOWN, false);
                         Invoke(new delegateUpdateDateInput(UpdateDateInput), ButtonType.UP, false);
                         Invoke(new delegateUpdateDateInput(UpdateDateInput), ButtonType.LEFT, false);
                         Invoke(new delegateUpdateDateInput(UpdateDateInput), ButtonType.RIGHT, false);
                         Invoke(new delegateUpdateDateInput(UpdateDateInput), ButtonType.A, false);
                     }
-
+*/
 
                     jState_before = jState;
 
-                    await Task.Delay(60).ConfigureAwait(false);
+                    await Task.Delay(100).ConfigureAwait(false);
                 }
             }
             catch
@@ -513,24 +522,26 @@ namespace PokemonSWSH_SeedSearchSupport
         {
             string[] ports = SerialPort.GetPortNames();
             comPortComboBox.Items.Clear();
+            int count = -1;
             foreach (string port in ports)
             {
                 comPortComboBox.Items.Add(port);
+                count++;
             }
             if (comPortComboBox.Items.Count > 0)
             {
-                comPortComboBox.SelectedIndex = 0;
+                comPortComboBox.SelectedIndex = count;
             }
         }
 
 
         private void Form1_Load(object sender, EventArgs e)
         {
-                getSerialPorts();
-                DateToday();
-                ContlrolChange();
-                InputInitialize();
-                Loop();
+            DateToday();
+            getSerialPorts();
+            ControllerChange();
+            InputInitialize();
+            Loop();
         }
 
         ///
@@ -542,6 +553,11 @@ namespace PokemonSWSH_SeedSearchSupport
         }
         private void comPortComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            token_source = new CancellationTokenSource();
+            cancel_token = token_source.Token;
+
+            InputUnLock();
+            this.token_source.Cancel();
             connectSerial();
         }
 
@@ -550,7 +566,8 @@ namespace PokemonSWSH_SeedSearchSupport
         ///
         private void connectSerial()
         {
-            try { 
+            try
+            {
                 if (serialPort.IsOpen)
                 {
                     serialPort.Close();
@@ -795,6 +812,18 @@ namespace PokemonSWSH_SeedSearchSupport
                 serialPort.Write(data, 0, 3);
             }
         }
+        private void MoveStick(ButtonType button, int x, int y)
+        {
+            if (serialPort.IsOpen)
+            {
+                Byte[] data = new byte[3];
+                data[0] = (Byte)button;
+                data[1] = (Byte)x;
+                data[2] = (Byte)y;
+
+                serialPort.Write(data, 0, 3);
+            }
+        }
         private void ReleaseStick(ButtonType button)
         {
             if (serialPort.IsOpen)
@@ -995,11 +1024,13 @@ namespace PokemonSWSH_SeedSearchSupport
         ///
         private void InputLock()
         {
+            MoveStick(ButtonType.LSTICK, Stick.CENTER, Stick.CENTER);
+            MoveStick(ButtonType.RSTICK, Stick.CENTER, Stick.CENTER);
             unUsedInput = true;
-            Button_dayReset.Enabled = false;
+            Button_machineDateReset.Enabled = false;
             DateTimePicker1.Enabled = false;
             DayTextbox.Enabled = false;
-            Button_dayReset.Enabled = false;
+            Button_machineDateReset.Enabled = false;
             Button_plus1Day.Enabled = false;
             Button_plus3Days.Enabled = false;
             Button_plusNDays.Enabled = false;
@@ -1008,7 +1039,7 @@ namespace PokemonSWSH_SeedSearchSupport
             Button_resetPlus4Days.Enabled = false;
             Button_resetPlus5Days.Enabled = false;
             Button_savePlus3days.Enabled = false;
-            Button_dateToday.Enabled = false;
+            Button_machineDateToday.Enabled = false;
             Button_displayStatus.Enabled = false;
             Button_dmax1.Enabled = false;
             Button_dmax2.Enabled = false;
@@ -1018,14 +1049,27 @@ namespace PokemonSWSH_SeedSearchSupport
             Button_startRaid.Enabled = false;
             Button_startRaidSelf.Enabled = false;
             Button_stop.Enabled = true;
+            Button_AutoRaid.Enabled = false;
+            Button_BattleTower.Enabled = false;
+            Button_collectFeathers.Enabled = false;
+            Button_Eggs.Enabled = false;
+            Button_Horidashimono.Enabled = false;
+            Button_IDkuji.Enabled = false;
+            Button_Kinomi.Enabled = false;
+            Button_Wget.Enabled = false;
+            numericUpDown_Box.Enabled = false;
+            numericUpDown_Cycle.Enabled = false;
         }
         private void InputUnLock()
         {
+            Invoke(new UpdateCalendarDelegate(UpdateCalendar));
+            MoveStick(ButtonType.LSTICK, Stick.CENTER, Stick.CENTER);
+            MoveStick(ButtonType.RSTICK, Stick.CENTER, Stick.CENTER);
             unUsedInput = false;
-            Button_dayReset.Enabled = true;
+            Button_machineDateReset.Enabled = true;
             DateTimePicker1.Enabled = true;
             DayTextbox.Enabled = true;
-            Button_dayReset.Enabled = true;
+            Button_machineDateReset.Enabled = true;
             Button_plus1Day.Enabled = true;
             Button_plus3Days.Enabled = true;
             Button_plusNDays.Enabled = true;
@@ -1034,7 +1078,7 @@ namespace PokemonSWSH_SeedSearchSupport
             Button_resetPlus4Days.Enabled = true;
             Button_resetPlus5Days.Enabled = true;
             Button_savePlus3days.Enabled = true;
-            Button_dateToday.Enabled = true;
+            Button_machineDateToday.Enabled = true;
             Button_displayStatus.Enabled = true;
             Button_dmax1.Enabled = true;
             Button_dmax2.Enabled = true;
@@ -1043,386 +1087,36 @@ namespace PokemonSWSH_SeedSearchSupport
             Button_repeatB.Enabled = true;
             Button_startRaid.Enabled = true;
             Button_startRaidSelf.Enabled = true;
-            Button_stop.Enabled = false;
             Button_stop.Enabled = true;
+            Button_AutoRaid.Enabled = true;
+            Button_BattleTower.Enabled = true;
+            Button_collectFeathers.Enabled = true;
+            Button_Eggs.Enabled = true;
+            Button_Horidashimono.Enabled = true;
+            Button_IDkuji.Enabled = true;
+            Button_Kinomi.Enabled = true;
+            Button_Wget.Enabled = true;
+            numericUpDown_Box.Enabled = true;
+            numericUpDown_Cycle.Enabled = true;
         }
 
         //△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△
 
         ///
-        ///本体の日付変更に使用するメソッド
+        ///他メソッドから呼び出されるメソッド
         ///
 
-        private async Task IncreaseDate(bool rade_hole_mode = false)
-        {
-            TimeSpan oneday = new TimeSpan(1, 0, 0, 0);
-            DateTime tommorow = current_date + oneday;
-            int year_diff = tommorow.Year - current_date.Year;
-            int month_diff = tommorow.Month - current_date.Month;
-            current_date = current_date + oneday;
-
-            int update_num = 1;
-            if (year_diff == 1) update_num = 3;
-            if (month_diff == 1) update_num = 2;
-
-            PressButton(ButtonType.A);
-            await Task.Delay(40);
-            ReleaseButton(ButtonType.A);
-            await Task.Delay(300);
-
-            if (rade_hole_mode)
-            {
-                for (int i = 0; i < 2; ++i)
-                {
-                    PressButton(ButtonType.RIGHT);
-                    await Task.Delay(40);
-                    ReleaseButton(ButtonType.RIGHT);
-                    await Task.Delay(40);
-                }
-
-                for (int i = 0; i < update_num; ++i)
-                {
-                    PressButton(ButtonType.UP);
-                    await Task.Delay(40);
-                    ReleaseButton(ButtonType.UP);
-                    await Task.Delay(40);
-
-                    if (i != update_num - 1)
-                    {
-                        PressButton(ButtonType.LEFT);
-                        await Task.Delay(40);
-                        ReleaseButton(ButtonType.LEFT);
-                        await Task.Delay(40);
-                    }
-                }
-
-                for (int i = 0; i < update_num + 3; ++i)
-                {
-                    PressButton(ButtonType.A);
-                    await Task.Delay(40);
-                    ReleaseButton(ButtonType.A);
-                    await Task.Delay(40);
-                }
-            }
-            else
-            {
-                for (int i = 0; i < 2; ++i)
-                {
-                    PressButton(ButtonType.LEFT);
-                    await Task.Delay(40);
-                    ReleaseButton(ButtonType.LEFT);
-                    await Task.Delay(40);
-                }
-
-                for (int i = 0; i < update_num; ++i)
-                {
-                    PressButton(ButtonType.LEFT);
-                    await Task.Delay(40);
-                    ReleaseButton(ButtonType.LEFT);
-                    await Task.Delay(40);
-                    PressButton(ButtonType.UP);
-                    await Task.Delay(40);
-                    ReleaseButton(ButtonType.UP);
-                    await Task.Delay(40);
-                }
-
-                for (int i = 0; i < 3 + update_num; ++i)
-                {
-                    PressButton(ButtonType.A);
-                    await Task.Delay(40);
-                    ReleaseButton(ButtonType.A);
-                    await Task.Delay(40);
-                }
-                await Task.Delay(200);
-            }
-            Invoke(new UpdateCalendarDelegate(UpdateCalendar));
-            //Invoke(new updateDateLabelDelegate(updateDateLabel));
-        }
-        
-        private async Task IncreaseDateWithRaidHole()
-        {
-            token_source = new CancellationTokenSource();
-            cancel_token = token_source.Token;
-            if (cancel_token.IsCancellationRequested)
-            {
-                return;
-            }
-
-            PressButton(ButtonType.A);
-            await Task.Delay(50);
-            ReleaseButton(ButtonType.A);
-            await Task.Delay(600);
-            PressButton(ButtonType.A);
-            await Task.Delay(50);
-            ReleaseButton(ButtonType.A);
-            await Task.Delay(3200);
-            if (cancel_token.IsCancellationRequested)
-            {
-                return;
-            }
-            PressButton(ButtonType.HOME);
-            await Task.Delay(50);
-            ReleaseButton(ButtonType.HOME);
-            await Task.Delay(1000);
-            PressButton(ButtonType.DOWN);
-            await Task.Delay(50);
-            for (int j = 0; j < 4; ++j)
-            {
-                PressButton(ButtonType.RIGHT);
-                await Task.Delay(50);
-                ReleaseButton(ButtonType.RIGHT);
-                await Task.Delay(50);
-            }
-            PressButton(ButtonType.A);
-            await Task.Delay(50);
-            ReleaseButton(ButtonType.A);
-            await Task.Delay(50);
-            PressButton(ButtonType.DOWN);
-            await Task.Delay(2200);
-            ReleaseButton(ButtonType.DOWN);
-            await Task.Delay(50);
-            if (cancel_token.IsCancellationRequested)
-            {
-                return;
-            }
-            PressButton(ButtonType.A);
-            await Task.Delay(50);
-            ReleaseButton(ButtonType.A);
-            await Task.Delay(50);
-
-            for (int j = 0; j < 4; ++j)
-            {
-                PressButton(ButtonType.DOWN);
-                await Task.Delay(50);
-                ReleaseButton(ButtonType.DOWN);
-                await Task.Delay(50);
-            }
-
-            PressButton(ButtonType.A);
-            await Task.Delay(50);
-            ReleaseButton(ButtonType.A);
-            await Task.Delay(300);
-
-            for (int j = 0; j < 2; ++j)
-            {
-                PressButton(ButtonType.DOWN);
-                await Task.Delay(50);
-                ReleaseButton(ButtonType.DOWN);
-                await Task.Delay(50);
-            }
-
-            //Increase date
-            await IncreaseDate(true);
-
-            PressButton(ButtonType.HOME);
-            await Task.Delay(50);
-            ReleaseButton(ButtonType.HOME);
-            await Task.Delay(1000);
-            if (cancel_token.IsCancellationRequested)
-            {
-                return;
-            }
-            PressButton(ButtonType.A);
-            await Task.Delay(50);
-            ReleaseButton(ButtonType.A);
-            await Task.Delay(500);
-
-            PressButton(ButtonType.B);
-            await Task.Delay(100);
-            ReleaseButton(ButtonType.B);
-            await Task.Delay(1000);
-            if (cancel_token.IsCancellationRequested)
-            {
-                return;
-            }
-            PressButton(ButtonType.A);
-            await Task.Delay(50);
-            ReleaseButton(ButtonType.A);
-            await Task.Delay(4000);
-
-            for (int j = 0; j < 2; ++j)
-            {
-                if (cancel_token.IsCancellationRequested)
-                {
-                    return;
-                }
-                PressButton(ButtonType.A);
-                await Task.Delay(50);
-                ReleaseButton(ButtonType.A);
-                await Task.Delay(500);
-            }
-
-            for (int j = 0; j < 3; ++j)
-            {
-                if (cancel_token.IsCancellationRequested)
-                {
-                    return;
-                }
-                PressButton(ButtonType.A);
-                await Task.Delay(50);
-                ReleaseButton(ButtonType.A);
-                await Task.Delay(100);
-            }
-        }
-
-        private async Task MachineDateChangeToday()
-        {
-            InputLock();
-            token_source = new CancellationTokenSource();
-            cancel_token = token_source.Token;
-            if (cancel_token.IsCancellationRequested)
-            {
-                return;
-            }
-
-
-            if (cancel_token.IsCancellationRequested)
-            {
-                return;
-            }
-
-            if (cancel_token.IsCancellationRequested)
-            {
-                return;
-            }
-            PressButton(ButtonType.HOME);
-            await Task.Delay(50);
-            ReleaseButton(ButtonType.HOME);
-            await Task.Delay(1000);
-            PressButton(ButtonType.DOWN);
-            await Task.Delay(50);
-            for (int j = 0; j < 4; ++j)
-            {
-                PressButton(ButtonType.RIGHT);
-                await Task.Delay(50);
-                ReleaseButton(ButtonType.RIGHT);
-                await Task.Delay(50);
-            }
-            PressButton(ButtonType.A);
-            await Task.Delay(50);
-            ReleaseButton(ButtonType.A);
-            await Task.Delay(50);
-            PressButton(ButtonType.DOWN);
-            await Task.Delay(2200);
-            ReleaseButton(ButtonType.DOWN);
-            await Task.Delay(50);
-            if (cancel_token.IsCancellationRequested)
-            {
-                return;
-            }
-            PressButton(ButtonType.A);
-            await Task.Delay(50);
-            ReleaseButton(ButtonType.A);
-            await Task.Delay(50);
-
-            for (int j = 0; j < 4; ++j)
-            {
-                PressButton(ButtonType.DOWN);
-                await Task.Delay(50);
-                ReleaseButton(ButtonType.DOWN);
-                await Task.Delay(50);
-            }
-
-            if (cancel_token.IsCancellationRequested)
-            {
-                return;
-            }
-
-            PressButton(ButtonType.A);
-            await Task.Delay(50);
-            ReleaseButton(ButtonType.A);
-            await Task.Delay(300);
-            PressButton(ButtonType.A);
-            await Task.Delay(50);
-            ReleaseButton(ButtonType.A);
-            await Task.Delay(300);
-            PressButton(ButtonType.A);
-            await Task.Delay(50);
-            ReleaseButton(ButtonType.A);
-            await Task.Delay(300);
-
-
-            PressButton(ButtonType.HOME);
-            await Task.Delay(50);
-            ReleaseButton(ButtonType.HOME);
-            await Task.Delay(1000);
-            PressButton(ButtonType.A);
-            await Task.Delay(50);
-            ReleaseButton(ButtonType.A);
-            await Task.Delay(500);
-            await DateToday();
-            InputUnLock();
-        }
-
-
-        ///
-        ///レイド使用日付変更メソッド
-        ///
-        private async Task PlusNDays(int n_days)
+        ///<summary>
+        ///日付設定画面の表示
+        ///</summary>
+        private async Task DisplayDate()
         {
             try
             {
-                InputLock();
-                token_source = new CancellationTokenSource();
-                cancel_token = token_source.Token;
-
-                await Task.Run(async () =>
-                {
-                    for (int i = 0; i < n_days; ++i)
-                    {
-                        if (cancel_token.IsCancellationRequested)
-                        {
-                            return;
-                        }
-
-                        await IncreaseDateWithRaidHole();
-                        Invoke(new UpdateCountDelegate(UpdateCount), i, n_days);
-                    }
-                }, cancel_token);
-                Invoke(new UpdateCalendarDelegate(UpdateCalendar));
-
-                InputUnLock();
-            }
-            catch (System.Threading.Tasks.TaskCanceledException exception)
-            {
-                
-                Invoke(new UpdateCalendarDelegate(UpdateCalendar));
-                InputUnLock();
-            }
-            catch (Exception ex)
-            {
-
-                Invoke(new UpdateCalendarDelegate(UpdateCalendar));
-                InputUnLock();
-            }
-
-        }
-
-        ///
-        ///ランクマ後日付変更メソッド
-        ///
-        private async Task PlusNDaysFast(object sender, EventArgs e, int n_days)
-        {
-            try
-            {
-                InputLock();
-                token_source = new CancellationTokenSource();
-                cancel_token = token_source.Token;
-
-
-                ///
-                DateTime dt = new DateTime(); ;
-                dt = current_date;
-
-                int year = dt.Year;
-                int month = dt.Month;
-                int day = dt.Day;
-
-                //ゲーム画面からスタート
                 PressButton(ButtonType.HOME);
-                await Task.Delay(50);
+                await Task.Delay(40);
                 ReleaseButton(ButtonType.HOME);
-                await Task.Delay(1500);
+                await Task.Delay(1000);
                 PressButton(ButtonType.DOWN);
                 await Task.Delay(50);
                 for (int j = 0; j < 4; ++j)
@@ -1431,10 +1125,6 @@ namespace PokemonSWSH_SeedSearchSupport
                     await Task.Delay(50);
                     ReleaseButton(ButtonType.RIGHT);
                     await Task.Delay(50);
-                }
-                if (cancel_token.IsCancellationRequested)
-                {
-                    return;
                 }
                 PressButton(ButtonType.A);
                 await Task.Delay(50);
@@ -1444,6 +1134,10 @@ namespace PokemonSWSH_SeedSearchSupport
                 await Task.Delay(2200);
                 ReleaseButton(ButtonType.DOWN);
                 await Task.Delay(50);
+                if (cancel_token.IsCancellationRequested)
+                {
+                    throw new Exception();
+                }
                 PressButton(ButtonType.A);
                 await Task.Delay(50);
                 ReleaseButton(ButtonType.A);
@@ -1453,7 +1147,7 @@ namespace PokemonSWSH_SeedSearchSupport
                 {
                     if (cancel_token.IsCancellationRequested)
                     {
-                        return;
+                        throw new Exception();
                     }
                     PressButton(ButtonType.DOWN);
                     await Task.Delay(50);
@@ -1464,11 +1158,296 @@ namespace PokemonSWSH_SeedSearchSupport
                 PressButton(ButtonType.A);
                 await Task.Delay(50);
                 ReleaseButton(ButtonType.A);
-                await Task.Delay(300);  //時間設定画面の表示
+                await Task.Delay(300);
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+        }
 
+        ///<summary>
+        ///本体の日付を1日進める（日付設定にフォーカスがあること）
+        ///</summary>
+
+        private async Task IncreaseDate(bool rade_hole_mode = false)
+        {
+            TimeSpan oneday = new TimeSpan(1, 0, 0, 0);
+            DateTime tommorow = current_date + oneday;
+            int year_diff = tommorow.Year - current_date.Year;
+            int month_diff = tommorow.Month - current_date.Month;
+            current_date = current_date + oneday;
+            token_source = new CancellationTokenSource();
+            cancel_token = token_source.Token;
+
+            try
+            {
+                int update_num = 1;
+                if (year_diff == 1) update_num = 3;
+                if (month_diff == 1) update_num = 2;
+
+                PressButton(ButtonType.A);
+                await Task.Delay(40);
+                ReleaseButton(ButtonType.A);
+                await Task.Delay(300);
+
+                if (rade_hole_mode)
+                {
+                    for (int i = 0; i < 2; ++i)
+                    {
+                        if (cancel_token.IsCancellationRequested)
+                        {
+                            return;
+                        }
+                        PressButton(ButtonType.RIGHT);
+                        await Task.Delay(40);
+                        ReleaseButton(ButtonType.RIGHT);
+                        await Task.Delay(40);
+                    }
+
+                    for (int i = 0; i < update_num; ++i)
+                    {
+                        if (cancel_token.IsCancellationRequested)
+                        {
+                            return;
+                        }
+                        PressButton(ButtonType.UP);
+                        await Task.Delay(40);
+                        ReleaseButton(ButtonType.UP);
+                        await Task.Delay(40);
+
+                        if (i != update_num - 1)
+                        {
+                            if (cancel_token.IsCancellationRequested)
+                            {
+                                return;
+                            }
+                            PressButton(ButtonType.LEFT);
+                            await Task.Delay(40);
+                            ReleaseButton(ButtonType.LEFT);
+                            await Task.Delay(40);
+                        }
+                    }
+
+                    for (int i = 0; i < update_num + 3; ++i)
+                    {
+                        if (cancel_token.IsCancellationRequested)
+                        {
+                            return;
+                        }
+                        PressButton(ButtonType.A);
+                        await Task.Delay(40);
+                        ReleaseButton(ButtonType.A);
+                        await Task.Delay(40);
+                    }
+                }
+                else
+                {
+                    for (int i = 0; i < 2; ++i)
+                    {
+                        if (cancel_token.IsCancellationRequested)
+                        {
+                            return;
+                        }
+                        PressButton(ButtonType.LEFT);
+                        await Task.Delay(40);
+                        ReleaseButton(ButtonType.LEFT);
+                        await Task.Delay(40);
+                    }
+
+                    for (int i = 0; i < update_num; ++i)
+                    {
+                        if (cancel_token.IsCancellationRequested)
+                        {
+                            return;
+                        }
+                        PressButton(ButtonType.LEFT);
+                        await Task.Delay(40);
+                        ReleaseButton(ButtonType.LEFT);
+                        await Task.Delay(40);
+                        PressButton(ButtonType.UP);
+                        await Task.Delay(40);
+                        ReleaseButton(ButtonType.UP);
+                        await Task.Delay(40);
+                    }
+
+                    for (int i = 0; i < 3 + update_num; ++i)
+                    {
+                        if (cancel_token.IsCancellationRequested)
+                        {
+                            return;
+                        }
+                        PressButton(ButtonType.A);
+                        await Task.Delay(40);
+                        ReleaseButton(ButtonType.A);
+                        await Task.Delay(40);
+                    }
+                    await Task.Delay(200);
+                }
+                Invoke(new UpdateCalendarDelegate(UpdateCalendar));
+                //Invoke(new updateDateLabelDelegate(updateDateLabel));
+            }
+            catch(Exception e) {
+                throw;
+            }
+        }
+
+        ///<summary>
+        ///レイドを使った時渡り（N日）
+        ///</summary>
+        private async Task IncreaseDateWithRaidHole()
+        {
+            token_source = new CancellationTokenSource();
+            cancel_token = token_source.Token;
+            try
+            {
+                if (cancel_token.IsCancellationRequested)
+                {
+                    throw new Exception();
+                }
+
+                PressButton(ButtonType.A);
+                await Task.Delay(50);
+                ReleaseButton(ButtonType.A);
+                await Task.Delay(600);
                 if (cancel_token.IsCancellationRequested)
                 {
                     return;
+                }
+                PressButton(ButtonType.A);
+                await Task.Delay(50);
+                ReleaseButton(ButtonType.A);
+                await Task.Delay(3200);
+                if (cancel_token.IsCancellationRequested)
+                {
+                    throw new Exception();
+                }
+                await DisplayDate();
+
+                for (int j = 0; j < 2; ++j)
+                {
+                    PressButton(ButtonType.DOWN);
+                    await Task.Delay(50);
+                    ReleaseButton(ButtonType.DOWN);
+                    await Task.Delay(50);
+                }
+
+                //Increase date
+                await IncreaseDate(true);
+                if (cancel_token.IsCancellationRequested)
+                {
+                    return;
+                }
+                PressButton(ButtonType.HOME);
+                await Task.Delay(50);
+                ReleaseButton(ButtonType.HOME);
+                await Task.Delay(1000);
+                if (cancel_token.IsCancellationRequested)
+                {
+                    return;
+                }
+                PressButton(ButtonType.A);
+                await Task.Delay(50);
+                ReleaseButton(ButtonType.A);
+                await Task.Delay(500);
+
+                PressButton(ButtonType.B);
+                await Task.Delay(100);
+                ReleaseButton(ButtonType.B);
+                await Task.Delay(1000);
+                if (cancel_token.IsCancellationRequested)
+                {
+                    return;
+                }
+                PressButton(ButtonType.A);
+                await Task.Delay(50);
+                ReleaseButton(ButtonType.A);
+                await Task.Delay(4000);
+
+                for (int j = 0; j < 2; ++j)
+                {
+                    if (cancel_token.IsCancellationRequested)
+                    {
+                        throw new Exception();
+                    }
+                    PressButton(ButtonType.A);
+                    await Task.Delay(50);
+                    ReleaseButton(ButtonType.A);
+                    await Task.Delay(500);
+                }
+
+                for (int j = 0; j < 3; ++j)
+                {
+                    if (cancel_token.IsCancellationRequested)
+                    {
+                        throw new Exception();
+                    }
+                    PressButton(ButtonType.A);
+                    await Task.Delay(50);
+                    ReleaseButton(ButtonType.A);
+                    await Task.Delay(100);
+                }
+            }
+            catch(Exception e) {
+                throw;
+            }
+        }
+
+
+        ///<summary>
+        ///レイド使用日付変更メソッド
+        ///</summary>
+        private async Task PlusNDays(int n_days)
+        {
+            try
+            {                
+                token_source = new CancellationTokenSource();
+                cancel_token = token_source.Token;
+
+                await Task.Run(async () =>
+                {
+                    for (int i = 0; i < n_days; ++i)
+                    {
+                        if (cancel_token.IsCancellationRequested)
+                        {
+                            throw new Exception();
+                        }
+
+                        await IncreaseDateWithRaidHole();
+                        Invoke(new UpdateCountDelegate(UpdateCount), i, n_days);
+                    }
+                }, cancel_token);
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+        }
+
+
+        ///<summary>
+        ///ランクマ後日付変更メソッド
+        /// </summary>
+        private async Task PlusNDaysFast(object sender, EventArgs e, int n_days)
+        {
+            try
+            {
+                token_source = new CancellationTokenSource();
+                cancel_token = token_source.Token;
+
+                DateTime dt = new DateTime(); 
+                dt = current_date;
+
+                int year = dt.Year;
+                int month = dt.Month;
+                int day = dt.Day;
+
+                //ゲーム画面からスタート
+
+                await DisplayDate();
+                if (cancel_token.IsCancellationRequested)
+                {
+                    throw new Exception();
                 }
 
                 for (int i = 0; i < 2; i++)
@@ -1482,6 +1461,7 @@ namespace PokemonSWSH_SeedSearchSupport
                     ReleaseButton(ButtonType.A);
                     await Task.Delay(50);
                 }//A2回
+
                 for (int i = 0; i < 2; i++)
                 {
                     PressButton(ButtonType.DOWN);
@@ -1500,7 +1480,7 @@ namespace PokemonSWSH_SeedSearchSupport
                 {
                     if (cancel_token.IsCancellationRequested)
                     {
-                        return;
+                        throw new Exception();
                     }
                     PressButton(ButtonType.DOWN);
                     await Task.Delay(50);
@@ -1516,7 +1496,467 @@ namespace PokemonSWSH_SeedSearchSupport
                 {
                     if (cancel_token.IsCancellationRequested)
                     {
-                        return;
+                        throw new Exception();
+                    }
+                    PressButton(ButtonType.DOWN);
+                    await Task.Delay(50);
+                    ReleaseButton(ButtonType.DOWN);
+                    await Task.Delay(50);
+                }
+                PressButton(ButtonType.RIGHT);
+                await Task.Delay(50);
+                ReleaseButton(ButtonType.RIGHT);
+                await Task.Delay(50);
+                for (int i = 0; i < day - 1; i++)
+                {
+                    if (cancel_token.IsCancellationRequested)
+                    {
+                        throw new Exception();
+                    }
+                    PressButton(ButtonType.DOWN);
+                    await Task.Delay(50);
+                    ReleaseButton(ButtonType.DOWN);
+                    await Task.Delay(50);
+                }
+                for (int i = 0; i < 3; i++)
+                {
+                    if (cancel_token.IsCancellationRequested)
+                    {
+                        throw new Exception();
+                    }
+                    PressButton(ButtonType.A);
+                    await Task.Delay(50);
+                    ReleaseButton(ButtonType.A);
+                    await Task.Delay(50);
+                }
+                current_date = new DateTime(2000, 1, 1, 0, 0, 0);
+                if (cancel_token.IsCancellationRequested)
+                {
+                    throw new Exception();
+                }
+                PressButton(ButtonType.A);
+                await Task.Delay(50);
+                ReleaseButton(ButtonType.A);
+                await Task.Delay(200);
+
+                if (cancel_token.IsCancellationRequested)
+                {
+                    throw new Exception();
+                }
+
+                for (int i = 0; i < n_days; ++i)
+                {
+                    if (cancel_token.IsCancellationRequested)
+                    {
+                        throw new Exception();
+                    }
+
+                    await IncreaseDate();
+                    Invoke(new UpdateCountDelegate(UpdateCount), i, n_days);
+                    //Invoke(new updateDateLabelDelegate(updateDateLabel));
+                }
+
+                InputUnLock();
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
+
+        //△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△
+
+
+        ///<summary>
+        ///レイドキャンセルしてセーブ　　
+        ///</summary>
+        private async Task ChanselAndSave()
+        {
+            try
+            {
+
+                token_source = new CancellationTokenSource();
+                cancel_token = token_source.Token;
+                Invoke(new UpdateCountDelegate(UpdateCount), -1, 3);
+                if (cancel_token.IsCancellationRequested)
+                {
+                    throw new Exception();
+                }
+                PressButton(ButtonType.B);
+                await Task.Delay(100);
+                ReleaseButton(ButtonType.B);
+                await Task.Delay(1500);
+                PressButton(ButtonType.X);
+                await Task.Delay(100);
+                ReleaseButton(ButtonType.X);
+                await Task.Delay(1050);
+                if (cancel_token.IsCancellationRequested)
+                {
+                    throw new Exception();
+                }
+                PressButton(ButtonType.R);
+                await Task.Delay(100);
+                ReleaseButton(ButtonType.R);
+                await Task.Delay(1500);
+                PressButton(ButtonType.A);
+                await Task.Delay(100);
+                ReleaseButton(ButtonType.A);
+                await Task.Delay(3000);
+                PressButton(ButtonType.A);
+                await Task.Delay(100);
+                ReleaseButton(ButtonType.A);
+                await Task.Delay(700);
+                await PlusNDays(3);
+            }
+            catch (Exception exception)
+            {
+                throw;
+            }
+
+        }
+
+        /// <summary>
+        /// リセットしてN日後に進む
+        /// </summary>
+        private async Task ResetStartNdays(int n)
+        {
+            try
+            {
+
+                token_source = new CancellationTokenSource();
+                cancel_token = token_source.Token;
+
+                if (cancel_token.IsCancellationRequested)
+                {
+                    throw new Exception();
+                }
+                PressButton(ButtonType.HOME);
+                await Task.Delay(100);
+                ReleaseButton(ButtonType.HOME);
+                await Task.Delay(1000);
+                PressButton(ButtonType.X);
+                await Task.Delay(80);
+                ReleaseButton(ButtonType.X);
+                await Task.Delay(1400);
+                if (cancel_token.IsCancellationRequested)
+                {
+                    throw new Exception();
+                }
+                PressButton(ButtonType.A);
+                await Task.Delay(100);
+                ReleaseButton(ButtonType.A);//ソフト終了
+                await Task.Delay(1000);
+                if (cancel_token.IsCancellationRequested)
+                {
+                    throw new Exception();
+                }
+                PressButton(ButtonType.A);
+                await Task.Delay(100);
+                ReleaseButton(ButtonType.A);
+                await Task.Delay(1500);
+                if (cancel_token.IsCancellationRequested)
+                {
+                    throw new Exception();
+                }
+                PressButton(ButtonType.A);
+                await Task.Delay(50);
+                ReleaseButton(ButtonType.A);
+                await Task.Delay(1000);
+                if (cancel_token.IsCancellationRequested)
+                {
+                    throw new Exception();
+                }
+                PressButton(ButtonType.A);
+                await Task.Delay(100);
+                ReleaseButton(ButtonType.A);
+                await Task.Delay(17600);
+                if (cancel_token.IsCancellationRequested)
+                {
+                    throw new Exception();
+                }
+                PressButton(ButtonType.A);
+                await Task.Delay(100);
+                ReleaseButton(ButtonType.A);
+                await Task.Delay(12000);
+                await PlusNDays(n);
+
+
+            }
+            catch (Exception exception)
+            {
+                throw;
+            }
+        }
+
+        //△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△
+
+
+        /// <summary>
+        ///ダイマックスして1つ目の技
+        /// </summary>
+        private async Task Battle_dmax1(object sender, EventArgs e)
+        {
+            try
+            {
+                PressButton(ButtonType.A);
+                await Task.Delay(100);
+                ReleaseButton(ButtonType.A);
+                await Task.Delay(500);
+                if (cancel_token.IsCancellationRequested)
+                {
+                    throw new Exception();
+                }
+                PressButton(ButtonType.LEFT);
+                await Task.Delay(100);
+                ReleaseButton(ButtonType.LEFT);
+                await Task.Delay(1300);
+                if (cancel_token.IsCancellationRequested)
+                {
+                    throw new Exception();
+                }
+                PressButton(ButtonType.A);
+                await Task.Delay(100);
+                ReleaseButton(ButtonType.A);
+                await Task.Delay(1500);
+                if (cancel_token.IsCancellationRequested)
+                {
+                    throw new Exception();
+                }
+                PressButton(ButtonType.A);
+                await Task.Delay(100);
+                ReleaseButton(ButtonType.A);
+                await Task.Delay(500);
+                if (cancel_token.IsCancellationRequested)
+                {
+                    throw new Exception();
+                }
+                PressButton(ButtonType.A);
+                await Task.Delay(100);
+                ReleaseButton(ButtonType.A);
+                await Task.Delay(500);
+            }
+            catch (Exception exception)
+            {
+                throw;
+            }
+        }
+        /// <summary>
+        ///ダイマックスして2つ目の技
+        /// </summary>
+        private async Task Battle_dmax2(object sender, EventArgs e)
+        {
+            try
+            {
+                PressButton(ButtonType.A);
+                await Task.Delay(100);
+                ReleaseButton(ButtonType.A);
+                await Task.Delay(500);
+                PressButton(ButtonType.LEFT);
+                await Task.Delay(100);
+                ReleaseButton(ButtonType.LEFT);
+                await Task.Delay(1300);
+                if (cancel_token.IsCancellationRequested)
+                {
+                    throw new Exception();
+                }
+                PressButton(ButtonType.A);
+                await Task.Delay(100);
+                ReleaseButton(ButtonType.A);
+                await Task.Delay(500);
+                PressButton(ButtonType.DOWN);
+                await Task.Delay(100);
+                ReleaseButton(ButtonType.DOWN);
+                await Task.Delay(500);
+                if (cancel_token.IsCancellationRequested)
+                {
+                    throw new Exception();
+                }
+                PressButton(ButtonType.A);
+                await Task.Delay(100);
+                ReleaseButton(ButtonType.A);
+                await Task.Delay(1800);
+                if (cancel_token.IsCancellationRequested)
+                {
+                    throw new Exception();
+                }
+                PressButton(ButtonType.A);
+                await Task.Delay(100);
+                ReleaseButton(ButtonType.A);
+                await Task.Delay(300);
+                if (cancel_token.IsCancellationRequested)
+                {
+                    throw new Exception();
+                }
+                PressButton(ButtonType.A);
+                await Task.Delay(100);
+                ReleaseButton(ButtonType.A);
+                await Task.Delay(500);
+            }
+            catch (Exception exception)
+            {
+                throw;
+            }
+        }
+                       
+
+        //△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△
+
+
+        ///<summary>
+        ///データを今日にする　　
+        ///</summary>
+        private async Task DateToday()
+        {
+
+            DateTime dt = DateTime.Now;
+            current_date = new DateTime(dt.Year, dt.Month, dt.Day, 0, 0, 0);
+            try
+            {
+                Invoke(new UpdateCalendarDelegate(UpdateCalendar));
+            }
+            catch (Exception exception)
+            {
+                throw;
+            }
+            // Invoke(new updateDateLabelDelegate(updateDateLabel));
+
+        }
+
+        /// <summary>
+        /// 日付が変更された時データも変更する
+        /// </summary>
+        private async Task DayInputChange()
+        {
+            current_date = new DateTime(DateTimePicker1.Value.Year, DateTimePicker1.Value.Month, DateTimePicker1.Value.Day, 0, 0, 0);
+            Invoke(new UpdateCalendarDelegate(UpdateCalendar));
+            //   Invoke(new updateDateLabelDelegate(updateDateLabel));
+
+        }
+
+        /// <summary>
+        /// 本体日付とデータを初期値にする
+        /// </summary>
+        private async Task DayReset()
+        {
+            InputLock();
+            DateTime dt = new DateTime(); ;
+            dt = current_date;
+
+            int year = dt.Year;
+            int month = dt.Month;
+            int day = dt.Day;
+            try
+            {
+                //ゲーム画面からスタート
+                PressButton(ButtonType.HOME);
+                await Task.Delay(50);
+                ReleaseButton(ButtonType.HOME);
+                await Task.Delay(1500);
+                PressButton(ButtonType.DOWN);
+                await Task.Delay(50);
+                for (int j = 0; j < 4; ++j)
+                {
+                    PressButton(ButtonType.RIGHT);
+                    await Task.Delay(50);
+                    ReleaseButton(ButtonType.RIGHT);
+                    await Task.Delay(50);
+                }
+
+                if (cancel_token.IsCancellationRequested)
+                {
+                    throw new Exception();
+                }
+                PressButton(ButtonType.A);
+                await Task.Delay(50);
+                ReleaseButton(ButtonType.A);
+                await Task.Delay(50);
+                PressButton(ButtonType.DOWN);
+                await Task.Delay(2200);
+                ReleaseButton(ButtonType.DOWN);
+                await Task.Delay(50);
+                PressButton(ButtonType.A);
+                await Task.Delay(50);
+                ReleaseButton(ButtonType.A);
+                await Task.Delay(50);
+
+                for (int j = 0; j < 4; ++j)
+                {
+
+                    if (cancel_token.IsCancellationRequested)
+                    {
+                        throw new Exception();
+                    }
+                    PressButton(ButtonType.DOWN);
+                    await Task.Delay(50);
+                    ReleaseButton(ButtonType.DOWN);
+                    await Task.Delay(50);
+                }
+
+                PressButton(ButtonType.A);
+                await Task.Delay(50);
+                ReleaseButton(ButtonType.A);
+                await Task.Delay(300);  //時間設定画面の表示
+
+
+                if (cancel_token.IsCancellationRequested)
+                {
+                    throw new Exception();
+                }
+
+                for (int i = 0; i < 2; i++)
+                {
+
+                    if (cancel_token.IsCancellationRequested)
+                    {
+                        throw new Exception();
+                    }
+                    PressButton(ButtonType.A);
+                    await Task.Delay(50);
+                    ReleaseButton(ButtonType.A);
+                    await Task.Delay(50);
+                }//A2回
+                for (int i = 0; i < 2; i++)
+                {
+                    PressButton(ButtonType.DOWN);
+                    await Task.Delay(50);
+                    ReleaseButton(ButtonType.DOWN);
+                    await Task.Delay(300);
+                }//Down2回
+
+                if (cancel_token.IsCancellationRequested)
+                {
+                    throw new Exception();
+                }
+
+                PressButton(ButtonType.A);
+                await Task.Delay(50);
+                ReleaseButton(ButtonType.A);
+                await Task.Delay(50);
+
+                for (int i = 0; i < year - 1999; i++)
+                {
+
+                    if (cancel_token.IsCancellationRequested)
+                    {
+                        throw new Exception();
+                    }
+                    PressButton(ButtonType.DOWN);
+                    await Task.Delay(50);
+                    ReleaseButton(ButtonType.DOWN);
+                    await Task.Delay(50);
+                }
+                PressButton(ButtonType.RIGHT);
+                await Task.Delay(50);
+                ReleaseButton(ButtonType.RIGHT);
+                await Task.Delay(50);
+
+                for (int i = 0; i < month - 1; i++)
+                {
+
+                    if (cancel_token.IsCancellationRequested)
+                    {
+                        throw new Exception();
                     }
                     PressButton(ButtonType.DOWN);
                     await Task.Delay(50);
@@ -1530,567 +1970,222 @@ namespace PokemonSWSH_SeedSearchSupport
                 //int x = DateTime.DaysInMonth(year, month);
                 for (int i = 0; i < day - 1; i++)
                 {
+
                     if (cancel_token.IsCancellationRequested)
                     {
-                        return;
+                        throw new Exception();
                     }
                     PressButton(ButtonType.DOWN);
                     await Task.Delay(50);
                     ReleaseButton(ButtonType.DOWN);
                     await Task.Delay(50);
                 }
-                for (int i = 0; i < 3; i++)
+                PressButton(ButtonType.RIGHT);
+                await Task.Delay(50);
+                ReleaseButton(ButtonType.RIGHT);
+                await Task.Delay(50);
+                if (cancel_token.IsCancellationRequested)
                 {
-                    PressButton(ButtonType.A);
-                    await Task.Delay(50);
-                    ReleaseButton(ButtonType.A);
-                    await Task.Delay(50);
+                    throw new Exception();
                 }
-                current_date = new DateTime(2000, 1, 1, 0, 0, 0);
                 PressButton(ButtonType.A);
                 await Task.Delay(50);
                 ReleaseButton(ButtonType.A);
-                await Task.Delay(200);
+                await Task.Delay(100);
+
 
 
                 if (cancel_token.IsCancellationRequested)
                 {
-                    return;
+                    throw new Exception();
                 }
-                ////
-
-/*
-                PressButton(ButtonType.A);
-                await Task.Delay(40);
-                ReleaseButton(ButtonType.A);
-                await Task.Delay(300);
-                PressButton(ButtonType.RIGHT);
+                PressButton(ButtonType.HOME);
+                await Task.Delay(50);
+                ReleaseButton(ButtonType.HOME);
                 await Task.Delay(1000);
-                ReleaseButton(ButtonType.RIGHT);
-                await Task.Delay(40);
-                PressButton(ButtonType.A);
-                await Task.Delay(40);
-                ReleaseButton(ButtonType.A);
-                await Task.Delay(300);*/
 
-                for (int i = 0; i < n_days; ++i)
+                if (cancel_token.IsCancellationRequested)
                 {
-                    if (cancel_token.IsCancellationRequested)
-                    {
-                        Invoke(new UpdateCalendarDelegate(UpdateCalendar));
-                        return;
-                    }
-
-                    await IncreaseDate();
-                    Invoke(new UpdateCountDelegate(UpdateCount), i, n_days);
-                    //Invoke(new updateDateLabelDelegate(updateDateLabel));
+                    throw new Exception();
                 }
+                PressButton(ButtonType.A);
+                await Task.Delay(50);
+                ReleaseButton(ButtonType.A);
+                await Task.Delay(1000);
 
-                InputUnLock();
-            }
-            catch (System.Threading.Tasks.TaskCanceledException exception)
-            {
-                InputUnLock();
-                Invoke(new UpdateCalendarDelegate(UpdateCalendar));
-            }
-            catch (System.FormatException formatException)
-            {
-                InputUnLock();
-                Invoke(new UpdateCalendarDelegate(UpdateCalendar));
-            }
-            token_source.Cancel();
-        }
-
-
-        //△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△
-
-
-        ///
-        ///seed特定時に使用するメソッド　　
-        ///
-        private async Task ChanselAndSave()
-        {
-            InputLock();
-            try
-            {
-                
-                token_source = new CancellationTokenSource();
-                cancel_token = token_source.Token;
-                Invoke(new UpdateCountDelegate(UpdateCount), -1, 3);
-                await Task.Run(async () =>
-                {
-                    if (cancel_token.IsCancellationRequested)
-                    {
-                        return;
-                    }
-                    PressButton(ButtonType.B);
-                    await Task.Delay(100);
-                    ReleaseButton(ButtonType.B);
-                    await Task.Delay(1500);
-                    PressButton(ButtonType.X);
-                    await Task.Delay(100);
-                    ReleaseButton(ButtonType.X);
-                    await Task.Delay(1500);
-                    if (cancel_token.IsCancellationRequested)
-                    {
-                        return;
-                    }
-                    PressButton(ButtonType.R);
-                    await Task.Delay(100);
-                    ReleaseButton(ButtonType.R);
-                    await Task.Delay(1500);
-                    PressButton(ButtonType.A);
-                    await Task.Delay(100);
-                    ReleaseButton(ButtonType.A);
-                    await Task.Delay(3000);
-                    PressButton(ButtonType.A);
-                    await Task.Delay(100);
-                    ReleaseButton(ButtonType.A);
-                    await Task.Delay(700);
-                    await Task.Run(async () =>
-                    {
-                        await PlusNDays(3);
-                    }, cancel_token);
-                }, cancel_token);
+                current_date = new DateTime(2000, 1, 1, 0, 0, 0);
             }
             catch (Exception exception)
             {
-                InputUnLock();
+                throw;
             }
-            
-        }        
-
-        private async Task ResetStartNdays(int n)
+        }
+               
+        ///<summary>
+        ///本体の日付を今日にする
+        ///</summary>
+        private async Task MachineDateChangeToday()
         {
+            token_source = new CancellationTokenSource();
+            cancel_token = token_source.Token;
             try
             {
+                if (cancel_token.IsCancellationRequested)
+                {
+                    throw new Exception();
+                }
+                await DisplayDate();
 
-                InputLock();
-                token_source = new CancellationTokenSource();
-                cancel_token = token_source.Token;
-
-                await Task.Run(async () =>
+                for (int i = 0; i < 2; i++)
                 {
                     if (cancel_token.IsCancellationRequested)
                     {
-                        return;
-                    }
-                    PressButton(ButtonType.HOME);
-                    await Task.Delay(100);
-                    ReleaseButton(ButtonType.HOME);
-                    await Task.Delay(1000);
-                    PressButton(ButtonType.X);
-                    await Task.Delay(80);
-                    ReleaseButton(ButtonType.X);
-                    await Task.Delay(1400);
-                    if (cancel_token.IsCancellationRequested)
-                    {
-                        return;
-                    }
-                    PressButton(ButtonType.A);
-                    await Task.Delay(100);
-                    ReleaseButton(ButtonType.A);//ソフト終了
-                    await Task.Delay(1000);
-                    PressButton(ButtonType.A);
-                    await Task.Delay(100);
-                    ReleaseButton(ButtonType.A);
-                    await Task.Delay(1500);
-                    if (cancel_token.IsCancellationRequested)
-                    {
-                        return;
+                        throw new Exception();
                     }
                     PressButton(ButtonType.A);
                     await Task.Delay(50);
                     ReleaseButton(ButtonType.A);
-                    await Task.Delay(1000);
-                    PressButton(ButtonType.A);
-                    await Task.Delay(100);
-                    ReleaseButton(ButtonType.A);
-                    await Task.Delay(17600);
-                    PressButton(ButtonType.A);
-                    await Task.Delay(100);
-                    ReleaseButton(ButtonType.A);
-                    await Task.Delay(12000);
-                    await PlusNDays(n);
-                    InputUnLock();
-                }, cancel_token);
+                    await Task.Delay(50);
+                }//A2回
 
 
-            }
-            catch (Exception exception)
-            {
-                InputUnLock();
-            }
-        }
-
-        //△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△
-
-
-        ///
-        ///レイド時に使用するメソッド　
-        ///　
-        private async Task Battle_dmax1(object sender, EventArgs e)
-        {
-            InputLock();
-            PressButton(ButtonType.A);
-            await Task.Delay(100);
-            ReleaseButton(ButtonType.A);
-            await Task.Delay(500);
-            PressButton(ButtonType.LEFT);
-            await Task.Delay(100);
-            ReleaseButton(ButtonType.LEFT);
-            await Task.Delay(1300);
-            PressButton(ButtonType.A);
-            await Task.Delay(100);
-            ReleaseButton(ButtonType.A);
-            await Task.Delay(1500);
-            PressButton(ButtonType.A);
-            await Task.Delay(100);
-            ReleaseButton(ButtonType.A);
-            await Task.Delay(500);
-            PressButton(ButtonType.A);
-            await Task.Delay(100);
-            ReleaseButton(ButtonType.A);
-            await Task.Delay(500);
-            InputUnLock();
-        }
-
-        private async Task Battle_dmax2(object sender, EventArgs e)
-        {
-            InputLock();
-            PressButton(ButtonType.A);
-            await Task.Delay(100);
-            ReleaseButton(ButtonType.A);
-            await Task.Delay(500);
-            PressButton(ButtonType.LEFT);
-            await Task.Delay(100);
-            ReleaseButton(ButtonType.LEFT);
-            await Task.Delay(1300);
-            PressButton(ButtonType.A);
-            await Task.Delay(100);
-            ReleaseButton(ButtonType.A);
-            await Task.Delay(500);
-            PressButton(ButtonType.DOWN);
-            await Task.Delay(100);
-            ReleaseButton(ButtonType.DOWN);
-            await Task.Delay(500);
-            PressButton(ButtonType.A);
-            await Task.Delay(100);
-            ReleaseButton(ButtonType.A);
-            await Task.Delay(1800);
-            PressButton(ButtonType.A);
-            await Task.Delay(100);
-            ReleaseButton(ButtonType.A);
-            await Task.Delay(300);
-            PressButton(ButtonType.A);
-            await Task.Delay(100);
-            ReleaseButton(ButtonType.A);
-            await Task.Delay(500);
-            InputUnLock();
-        }
-
-
-
-
-
-        //△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△
-
-
-        ///
-        ///日時入力に使用するメソッド　　
-        ///
-
-        private async Task DateToday()
-        {
-            
-            DateTime dt = DateTime.Now;
-            current_date = new DateTime(dt.Year, dt.Month, dt.Day, 0, 0, 0);
-            Invoke(new UpdateCalendarDelegate(UpdateCalendar));
-           // Invoke(new updateDateLabelDelegate(updateDateLabel));
-            
-        } 
-
-        private async Task DayReset()
-        {
-            InputLock();
-            DateTime dt = new DateTime(); ;
-            dt = current_date;
-
-            int year = dt.Year;
-            int month = dt.Month;
-            int day = dt.Day;
-
-            //ゲーム画面からスタート
-            PressButton(ButtonType.HOME);
-            await Task.Delay(50);
-            ReleaseButton(ButtonType.HOME);
-            await Task.Delay(1500);
-            PressButton(ButtonType.DOWN);
-            await Task.Delay(50);
-            for (int j = 0; j < 4; ++j)
-            {
-                PressButton(ButtonType.RIGHT);
+                PressButton(ButtonType.HOME);
                 await Task.Delay(50);
-                ReleaseButton(ButtonType.RIGHT);
-                await Task.Delay(50);
-            }
-            if (cancel_token.IsCancellationRequested)
-            {
-                return;
-            }
-            PressButton(ButtonType.A);
-            await Task.Delay(50);
-            ReleaseButton(ButtonType.A);
-            await Task.Delay(50);
-            PressButton(ButtonType.DOWN);
-            await Task.Delay(2200);
-            ReleaseButton(ButtonType.DOWN);
-            await Task.Delay(50);
-            PressButton(ButtonType.A);
-            await Task.Delay(50);
-            ReleaseButton(ButtonType.A);
-            await Task.Delay(50);
-
-            for (int j = 0; j < 4; ++j)
-            {
+                ReleaseButton(ButtonType.HOME);
+                await Task.Delay(1000);
                 if (cancel_token.IsCancellationRequested)
                 {
-                    return;
-                }
-                PressButton(ButtonType.DOWN);
-                await Task.Delay(50);
-                ReleaseButton(ButtonType.DOWN);
-                await Task.Delay(50);
-            }
-
-            PressButton(ButtonType.A);
-            await Task.Delay(50);
-            ReleaseButton(ButtonType.A);
-            await Task.Delay(300);  //時間設定画面の表示
-
-            if (cancel_token.IsCancellationRequested)
-            {
-                return;
-            }
-
-            for (int i = 0; i < 2; i++)
-            {
-                if (cancel_token.IsCancellationRequested)
-                {
-                    return;
+                    throw new Exception();
                 }
                 PressButton(ButtonType.A);
                 await Task.Delay(50);
                 ReleaseButton(ButtonType.A);
-                await Task.Delay(50);
-            }//A2回
-            for (int i=0; i < 2; i++) { 
-                PressButton(ButtonType.DOWN);
-                await Task.Delay(50);
-                ReleaseButton(ButtonType.DOWN);
-                await Task.Delay(300);
-            }//Down2回
-
-
-            PressButton(ButtonType.A);
-            await Task.Delay(50);
-            ReleaseButton(ButtonType.A);
-            await Task.Delay(50);
-
-            for (int i = 0; i < year - 1999; i++)
-            {
-                if (cancel_token.IsCancellationRequested)
-                {
-                    return;
-                }
-                PressButton(ButtonType.DOWN);
-                await Task.Delay(50);
-                ReleaseButton(ButtonType.DOWN);
-                await Task.Delay(50);
+                await Task.Delay(500);
+                await DateToday();
             }
-            PressButton(ButtonType.RIGHT);
-            await Task.Delay(50);
-            ReleaseButton(ButtonType.RIGHT);
-            await Task.Delay(50);
-
-            for (int i = 0; i < month-1; i++)
+            catch (Exception exception)
             {
-                if (cancel_token.IsCancellationRequested)
-                {
-                    return;
-                }
-                PressButton(ButtonType.DOWN);
-                await Task.Delay(50);
-                ReleaseButton(ButtonType.DOWN);
-                await Task.Delay(50);
+                throw;
             }
-            PressButton(ButtonType.RIGHT);
-            await Task.Delay(50);
-            ReleaseButton(ButtonType.RIGHT);
-            await Task.Delay(50);
-            //int x = DateTime.DaysInMonth(year, month);
-            for (int i = 0; i < day-1; i++)
-            {
-                if (cancel_token.IsCancellationRequested)
-                {
-                    return;
-                }
-                PressButton(ButtonType.DOWN);
-                await Task.Delay(50);
-                ReleaseButton(ButtonType.DOWN);
-                await Task.Delay(50);
-            }
-            PressButton(ButtonType.RIGHT);
-            await Task.Delay(50);
-            ReleaseButton(ButtonType.RIGHT);
-            await Task.Delay(50);
-            PressButton(ButtonType.A);
-            await Task.Delay(50);
-            ReleaseButton(ButtonType.A);
-            await Task.Delay(100);
-
-
-            if (cancel_token.IsCancellationRequested)
-            {
-                return;
-            }
-            PressButton(ButtonType.HOME);
-            await Task.Delay(50);
-            ReleaseButton(ButtonType.HOME);
-            await Task.Delay(1000);
-            if (cancel_token.IsCancellationRequested)
-            {
-                return;
-            }
-            PressButton(ButtonType.A);
-            await Task.Delay(50);
-            ReleaseButton(ButtonType.A);
-            await Task.Delay(1000);
-
-
-
-            current_date = new DateTime(2000, 1, 1, 0, 0, 0);
-            Invoke(new UpdateCalendarDelegate(UpdateCalendar));
-            // Invoke(new updateDateLabelDelegate(updateDateLabel));
-
-
-            InputUnLock();
-
-        }
-
-        private async Task DayInputChange()
-        {
-            current_date = new DateTime(DateTimePicker1.Value.Year, DateTimePicker1.Value.Month, DateTimePicker1.Value.Day, 0, 0, 0);
-            Invoke(new UpdateCalendarDelegate(UpdateCalendar));
-            //   Invoke(new updateDateLabelDelegate(updateDateLabel));
-
         }
 
         //△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△
 
 
-        ///
-        ///その他操作メソッド
-        ///
+        /// <summary>
+        /// 2体目をLv100にする
+        /// </summary>
 
         private async Task LevelUp()
         {
             try
             {
-                InputLock();
                 token_source = new CancellationTokenSource();
                 cancel_token = token_source.Token;
-                await Task.Run(async () =>
-                {
-                    PressButton(ButtonType.B);
-                    await Task.Delay(100);
-                    ReleaseButton(ButtonType.B);
-                    await Task.Delay(500);
-                    PressButton(ButtonType.B);
-                    await Task.Delay(100);
-                    ReleaseButton(ButtonType.B);
-                    await Task.Delay(500);
-                    if (cancel_token.IsCancellationRequested)
-                    {
-                        return;
-                    }
-                    PressButton(ButtonType.X);
-                    await Task.Delay(100);
-                    ReleaseButton(ButtonType.X);
-                    await Task.Delay(1100);
-                    if (cancel_token.IsCancellationRequested)
-                    {
-                        return;
-                    }
-                    PressButton(ButtonType.A);
-                    await Task.Delay(100);
-                    ReleaseButton(ButtonType.A);
-                    await Task.Delay(1800);
-                    for(int i = 0; i < 4; i++)
-                    {
-                        PressButton(ButtonType.RIGHT);
-                        await Task.Delay(100);
-                        ReleaseButton(ButtonType.RIGHT);
-                        await Task.Delay(100);
-                    }
-                    if (cancel_token.IsCancellationRequested)
-                    {
-                        return;
-                    }
-                    PressButton(ButtonType.A);
-                    await Task.Delay(100);
-                    ReleaseButton(ButtonType.A);
-                    await Task.Delay(500);
-                    PressButton(ButtonType.A);
-                    await Task.Delay(100);
-                    ReleaseButton(ButtonType.A);
-                    await Task.Delay(500);
-                    PressButton(ButtonType.DOWN);
-                    await Task.Delay(100);
-                    ReleaseButton(ButtonType.DOWN);
-                    await Task.Delay(500);
-                    PressButton(ButtonType.A);
-                    await Task.Delay(100);
-                    ReleaseButton(ButtonType.A);
-                    await Task.Delay(1000);
-                    PressButton(ButtonType.LEFT);
-                    await Task.Delay(100);
-                    ReleaseButton(ButtonType.LEFT);
-                    await Task.Delay(500);
-                    PressButton(ButtonType.A);
-                    await Task.Delay(100);
-                    ReleaseButton(ButtonType.A);
-                    await Task.Delay(1000);
-                    if (cancel_token.IsCancellationRequested)
-                    {
-                        return;
-                    }
-                    PressButton(ButtonType.A);
-                    await Task.Delay(100);
-                    ReleaseButton(ButtonType.A);
-                    await Task.Delay(500);
-                    PressButton(ButtonType.B);
-                    await Task.Delay(100);
-                    ReleaseButton(ButtonType.B);
-                    await Task.Delay(500);
-                    PressButton(ButtonType.B);
-                    await Task.Delay(100);
-                    ReleaseButton(ButtonType.B);
-                    await Task.Delay(500);
-                    PressButton(ButtonType.B);
-                    await Task.Delay(100);
-                    ReleaseButton(ButtonType.B);
-                    await Task.Delay(500);
-                    
 
-                }, cancel_token);
-                InputUnLock();
+                PressButton(ButtonType.B);
+                await Task.Delay(100);
+                ReleaseButton(ButtonType.B);
+                await Task.Delay(500);
+                PressButton(ButtonType.B);
+                await Task.Delay(100);
+                ReleaseButton(ButtonType.B);
+                await Task.Delay(500);
+                if (cancel_token.IsCancellationRequested)
+                {
+                    throw new Exception();
+                }
+                PressButton(ButtonType.X);
+                await Task.Delay(100);
+                ReleaseButton(ButtonType.X);
+                await Task.Delay(1050);
+                if (cancel_token.IsCancellationRequested)
+                {
+                    throw new Exception();
+                }
+                PressButton(ButtonType.A);
+                await Task.Delay(100);
+                ReleaseButton(ButtonType.A);
+                await Task.Delay(1800);
+                for (int i = 0; i < 4; i++)
+                {
+                    PressButton(ButtonType.RIGHT);
+                    await Task.Delay(100);
+                    ReleaseButton(ButtonType.RIGHT);
+                    await Task.Delay(100);
+                }
+                if (cancel_token.IsCancellationRequested)
+                {
+                    throw new Exception();
+                }
+                PressButton(ButtonType.A);
+                await Task.Delay(100);
+                ReleaseButton(ButtonType.A);
+                await Task.Delay(500);
+                if (cancel_token.IsCancellationRequested)
+                {
+                    throw new Exception();
+                }
+                PressButton(ButtonType.A);
+                await Task.Delay(100);
+                ReleaseButton(ButtonType.A);
+                await Task.Delay(500);
+                PressButton(ButtonType.DOWN);
+                await Task.Delay(100);
+                ReleaseButton(ButtonType.DOWN);
+                await Task.Delay(500);
+                if (cancel_token.IsCancellationRequested)
+                {
+                    throw new Exception();
+                }
+                PressButton(ButtonType.A);
+                await Task.Delay(100);
+                ReleaseButton(ButtonType.A);
+                await Task.Delay(1000);
+                PressButton(ButtonType.LEFT);
+                await Task.Delay(100);
+                ReleaseButton(ButtonType.LEFT);
+                await Task.Delay(500);
+                if (cancel_token.IsCancellationRequested)
+                {
+                    throw new Exception();
+                }
+                PressButton(ButtonType.A);
+                await Task.Delay(100);
+                ReleaseButton(ButtonType.A);
+                await Task.Delay(1000);
+                if (cancel_token.IsCancellationRequested)
+                {
+                    throw new Exception();
+                }
+                PressButton(ButtonType.A);
+                await Task.Delay(100);
+                ReleaseButton(ButtonType.A);
+                await Task.Delay(500);
+                PressButton(ButtonType.B);
+                await Task.Delay(100);
+                ReleaseButton(ButtonType.B);
+                await Task.Delay(500);
+                PressButton(ButtonType.B);
+                await Task.Delay(100);
+                ReleaseButton(ButtonType.B);
+                await Task.Delay(500);
+                PressButton(ButtonType.B);
+                await Task.Delay(100);
+                ReleaseButton(ButtonType.B);
+                await Task.Delay(500);
+
             }
             catch (Exception exception)
             {
-                InputUnLock();
+                throw;
             }
         }
+
+
+        /// <summary>
+        /// 2体目のステータスを表示する
+        /// </summary>
         private async Task DisplayStatus()
         {
             try
@@ -2098,139 +2193,1605 @@ namespace PokemonSWSH_SeedSearchSupport
                 InputLock();
                 token_source = new CancellationTokenSource();
                 cancel_token = token_source.Token;
-                await Task.Run(async () =>
+                for (int i = 0; i < 3; i++)
                 {
-                    for(int i=0; i<3; i++) { 
-                        PressButton(ButtonType.B);
+                    if (cancel_token.IsCancellationRequested)
+                    {
+                        throw new Exception();
+                    }
+                    PressButton(ButtonType.B);
                         await Task.Delay(100);
                         ReleaseButton(ButtonType.B);
                         await Task.Delay(1000);
-                    }
-                    PressButton(ButtonType.X);
-                    await Task.Delay(100);
-                    ReleaseButton(ButtonType.X);
-                    await Task.Delay(1150);
+                 }
+                PressButton(ButtonType.X);
+                await Task.Delay(100);
+                ReleaseButton(ButtonType.X);
+                await Task.Delay(1050);
+                PressButton(ButtonType.RIGHT);
+                await Task.Delay(100);
+                ReleaseButton(ButtonType.RIGHT);
+                await Task.Delay(800);
+                if (cancel_token.IsCancellationRequested)
+                {
+                    throw new Exception();
+                }
+                PressButton(ButtonType.A);
+                await Task.Delay(100);
+                ReleaseButton(ButtonType.A);
+                await Task.Delay(1300);
+                PressButton(ButtonType.DOWN);
+                await Task.Delay(100);
+                ReleaseButton(ButtonType.DOWN);
+                await Task.Delay(500);
+                if (cancel_token.IsCancellationRequested)
+                {
+                    throw new Exception();
+                }
+                PressButton(ButtonType.A);
+                await Task.Delay(100);
+                ReleaseButton(ButtonType.A);
+                await Task.Delay(500);
+                if (cancel_token.IsCancellationRequested)
+                {
+                    throw new Exception();
+                }
+                PressButton(ButtonType.A);
+                await Task.Delay(100);
+                ReleaseButton(ButtonType.A);
+                await Task.Delay(1400);
+                for (int i = 0; i < 3; i++)
+                {
                     PressButton(ButtonType.RIGHT);
                     await Task.Delay(100);
                     ReleaseButton(ButtonType.RIGHT);
-                    await Task.Delay(800);
-                    PressButton(ButtonType.A);
-                    await Task.Delay(100);
-                    ReleaseButton(ButtonType.A);
-                    await Task.Delay(1300);
-                    PressButton(ButtonType.DOWN);
-                    await Task.Delay(100);
-                    ReleaseButton(ButtonType.DOWN);
-                    await Task.Delay(500);
-                    PressButton(ButtonType.A);
-                    await Task.Delay(100);
-                    ReleaseButton(ButtonType.A);
-                    await Task.Delay(500);
-                    PressButton(ButtonType.A);
-                    await Task.Delay(100);
-                    ReleaseButton(ButtonType.A);
-                    await Task.Delay(1400);
-                    for (int i = 0; i < 3; i++)
-                    {
-                        PressButton(ButtonType.RIGHT);
-                        await Task.Delay(100);
-                        ReleaseButton(ButtonType.RIGHT);
-                        await Task.Delay(300);
-                    }
-                }, cancel_token);
-                InputUnLock();
+                    await Task.Delay(300);
+                }
             }
             catch (Exception exception)
             {
-                InputUnLock();
+                throw;
             }
         }
+        /// <summary>
+        /// Aボタン連打
+        /// </summary>
         private async Task RepeatA()
         {
             try
             {
-                InputLock();
                 token_source = new CancellationTokenSource();
                 cancel_token = token_source.Token;
-                await Task.Run(async () =>
+                while (true)
                 {
-                    while (cancel_token.IsCancellationRequested == false)
+                    if (cancel_token.IsCancellationRequested)
                     {
-                        PressButton(ButtonType.A);
-                        await Task.Delay(100);
-                        ReleaseButton(ButtonType.A);
-                        await Task.Delay(500);
+                        throw new Exception();
                     }
-                }, cancel_token);
-                InputUnLock();
+                    PressButton(ButtonType.A);
+                    await Task.Delay(100);
+                    ReleaseButton(ButtonType.A);
+                    await Task.Delay(500);
+                }
             }
             catch (Exception exception)
             {
-                InputUnLock();
+                throw;
             }
-            
+
         }
+        /// <summary>
+        /// Bボタン連打
+        /// </summary>
         private async Task RepeatB()
         {
             try
             {
-                InputLock();
                 token_source = new CancellationTokenSource();
                 cancel_token = token_source.Token;
-                await Task.Run(async () =>
+                while (true)
                 {
-                    while (cancel_token.IsCancellationRequested == false)
+                    if (cancel_token.IsCancellationRequested)
                     {
-                        PressButton(ButtonType.B);
-                        await Task.Delay(100);
-                        ReleaseButton(ButtonType.B);
-                        await Task.Delay(500);
+                        throw new Exception();
                     }
-                }, cancel_token);
+                    PressButton(ButtonType.B);
+                    await Task.Delay(100);
+                    ReleaseButton(ButtonType.B);
+                    await Task.Delay(500);
+                }
+            }
+            catch (Exception exception)
+            {
+                throw;
+            }
+
+        }
+
+        /// <summary>
+        /// ひとりでレイド開始
+        /// </summary>
+        private async Task StartRaidSelf_Click()
+        {
+            token_source = new CancellationTokenSource();
+            cancel_token = token_source.Token;
+            try
+            {
+                PressButton(ButtonType.DOWN);
+                await Task.Delay(100);
+                ReleaseButton(ButtonType.DOWN);
+                await Task.Delay(200);
+                if (cancel_token.IsCancellationRequested)
+                {
+                    throw new Exception();
+                }
+                PressButton(ButtonType.A);
+                await Task.Delay(100);
+                ReleaseButton(ButtonType.A);
+                await Task.Delay(500);
+                if (cancel_token.IsCancellationRequested)
+                {
+                    throw new Exception();
+                }
+                PressButton(ButtonType.A);
+                await Task.Delay(100);
+                ReleaseButton(ButtonType.A);
+            }
+            catch (Exception exception)
+            {
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// みんなでレイド開始
+        /// </summary>
+        private async Task StartRaid_Click()
+        {
+            try
+            {
+                token_source = new CancellationTokenSource();
+                cancel_token = token_source.Token;
+                PressButton(ButtonType.A);
+                await Task.Delay(100);
+                ReleaseButton(ButtonType.A);
+                await Task.Delay(3500);
+                if (cancel_token.IsCancellationRequested)
+                {
+                    throw new Exception();
+                }
+                PressButton(ButtonType.UP);
+                await Task.Delay(100);
+                ReleaseButton(ButtonType.UP);
+                await Task.Delay(100);
+                if (cancel_token.IsCancellationRequested)
+                {
+                    throw new Exception();
+                }
+                PressButton(ButtonType.A);
+                await Task.Delay(100);
+                ReleaseButton(ButtonType.A);
+                }
+            catch (Exception exception)
+            {
+                throw;
+            }
+        }
+
+        //△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△
+
+        /// 
+        /// いろいろ周回
+        /// 
+
+        /// <summary>
+        /// バトルタワー周回
+        /// </summary>
+        private async Task BattleTower()
+        {
+            token_source = new CancellationTokenSource();
+            cancel_token = token_source.Token;
+            try
+            {
+                while (true)
+                {
+
+                    PressButton(ButtonType.A);
+                    await Task.Delay(25);
+                    ReleaseButton(ButtonType.A);
+                    await Task.Delay(500);//1
+                    if (cancel_token.IsCancellationRequested)
+                    {
+                        throw new Exception();
+                    }
+                    PressButton(ButtonType.A);
+                    await Task.Delay(25);
+                    ReleaseButton(ButtonType.A);
+                    await Task.Delay(2500);//2
+                    if (cancel_token.IsCancellationRequested)
+                    {
+                        throw new Exception();
+                    }
+                    PressButton(ButtonType.A);
+                    await Task.Delay(25);
+                    ReleaseButton(ButtonType.A);
+                    if (cancel_token.IsCancellationRequested)
+                    {
+                        throw new Exception();
+                    }
+                    await Task.Delay(500);//3
+                    PressButton(ButtonType.A);
+                    await Task.Delay(25);
+                    ReleaseButton(ButtonType.A);
+                    await Task.Delay(500);//4
+                    PressButton(ButtonType.UP);
+                    await Task.Delay(25);
+                    ReleaseButton(ButtonType.UP);
+                    await Task.Delay(500);//5
+                    if (cancel_token.IsCancellationRequested)
+                    {
+                        throw new Exception();
+                    }
+                    PressButton(ButtonType.A);
+                    await Task.Delay(25);
+                    ReleaseButton(ButtonType.A);
+                    await Task.Delay(2500);//6
+                    PressButton(ButtonType.A);
+                    if (cancel_token.IsCancellationRequested)
+                    {
+                        throw new Exception();
+                    }
+                    await Task.Delay(25);
+                    ReleaseButton(ButtonType.A);
+                    await Task.Delay(500);//7
+                    PressButton(ButtonType.UP);
+                    await Task.Delay(25);
+                    ReleaseButton(ButtonType.UP);
+                    await Task.Delay(500);//8
+                    for (int i = 0; i < 8; i++)
+                    {
+
+                        if (cancel_token.IsCancellationRequested)
+                        {
+                            throw new Exception();
+                        }
+                        PressButton(ButtonType.A);
+                        await Task.Delay(25);
+                        ReleaseButton(ButtonType.A);
+                        await Task.Delay(500);//9-16
+                    }
+                    for (int i = 0; i < 3; i++)
+                    {
+
+                        if (cancel_token.IsCancellationRequested)
+                        {
+                            throw new Exception();
+                        }
+                        PressButton(ButtonType.B);
+                        await Task.Delay(25);
+                        ReleaseButton(ButtonType.B);
+                        await Task.Delay(500);//17-19
+                    }
+                    PressButton(ButtonType.UP);
+                    await Task.Delay(25);
+                    ReleaseButton(ButtonType.UP);
+                    await Task.Delay(500);//8
+
+
+                    /*
+                                        for (int i = 0; i < 4; i++)
+                                        {
+                                            if (cancel_token.IsCancellationRequested)
+                                            {
+                                                return;
+                                            }
+                                            PressButton(ButtonType.A);
+                                            await Task.Delay(50);
+                                            ReleaseButton(ButtonType.A);
+                                            await Task.Delay(1500);
+                                        }
+                                        PressButton(ButtonType.UP);
+                                        await Task.Delay(50);
+                                        ReleaseButton(ButtonType.UP);
+                                        await Task.Delay(1500);
+                                        for (int i = 0; i < 2; i++)
+                                        {
+                                            if (cancel_token.IsCancellationRequested)
+                                            {
+                                                return;
+                                            }
+                                            PressButton(ButtonType.A);
+                                            await Task.Delay(50);
+                                            ReleaseButton(ButtonType.A);
+                                            await Task.Delay(1500);
+                                        }
+                                        PressButton(ButtonType.UP);
+                                        await Task.Delay(50);
+                                        ReleaseButton(ButtonType.UP);
+                                        await Task.Delay(1500);
+                                        for (int i = 0; i < 4; i++)
+                                        {
+                                            if (cancel_token.IsCancellationRequested)
+                                            {
+                                                return;
+                                            }
+                                            PressButton(ButtonType.A);
+                                            await Task.Delay(50);
+                                            ReleaseButton(ButtonType.A);
+                                            await Task.Delay(1500);
+                                        }
+                                        PressButton(ButtonType.B);
+                                        await Task.Delay(50);
+                                        ReleaseButton(ButtonType.B);
+                                        await Task.Delay(1500);
+                                        PressButton(ButtonType.UP);
+                                        await Task.Delay(50);
+                                        ReleaseButton(ButtonType.UP);
+                                        await Task.Delay(1500);
+                                        PressButton(ButtonType.R);
+                                        await Task.Delay(50);
+                                        ReleaseButton(ButtonType.R);
+                                        await Task.Delay(50);
+                                        PressButton(ButtonType.R);
+                                        await Task.Delay(50);
+                                        ReleaseButton(ButtonType.R);
+                                        await Task.Delay(1500);*/
+
+                }
+            }
+            catch (Exception exception)
+            {
+                throw;
+            }
+        }
+        /// <summary>
+        /// ワイルドエリアの預け屋の前に移動
+        /// </summary>
+        private async Task EggFirstPoint()
+        {
+            token_source = new CancellationTokenSource();
+            cancel_token = token_source.Token;
+            try
+            {
+                if (cancel_token.IsCancellationRequested)
+                {
+                    throw new Exception();
+                }
+                PressButton(ButtonType.X);
+                await Task.Delay(50);
+                ReleaseButton(ButtonType.X);
+                await Task.Delay(1100);
+                PressButton(ButtonType.A);
+                await Task.Delay(50);
+                ReleaseButton(ButtonType.A);
+                await Task.Delay(3850);
+
+                if (cancel_token.IsCancellationRequested)
+                {
+                    throw new Exception();
+                }
+                PressButton(ButtonType.A);
+                await Task.Delay(50);
+                ReleaseButton(ButtonType.A);
+                await Task.Delay(570);
+                PressButton(ButtonType.A);
+                await Task.Delay(50);
+                ReleaseButton(ButtonType.A);
+                await Task.Delay(2100);
+            }
+            catch (Exception exception)
+            {
+                throw;
+            }
+        }
+        /// <summary>
+        /// 孵化周回
+        /// </summary>
+        private async Task Eggs(decimal cycle, decimal box, object sender, EventArgs e)
+        {
+            token_source = new CancellationTokenSource();
+            cancel_token = token_source.Token;
+            int boxCount = 0;
+            int line = 0;
+            int eggCount = 0;
+            try
+            {
+                InputLock();
+                label_Eggcount.Text = "孵化数：" + eggCount;
+                while (boxCount < box)
+                {
+                    //手持ちの空き分繰り返す
+
+                    for (int j = 0; j < 5; j++)
+                    {
+                        if (cancel_token.IsCancellationRequested)
+                        {
+                            throw new Exception();
+                        }
+                        await Task.Delay(50);
+                        await EggFirstPoint();
+                        if (cancel_token.IsCancellationRequested)
+                        {
+                            throw new Exception();
+                        }
+                        //預け屋に話しかける
+                        MoveStick(ButtonType.LSTICK, Stick.CENTER, Stick.MAX);
+                        await Task.Delay(400);
+                        MoveStick(ButtonType.LSTICK, Stick.MAX, Stick.MAX);
+                        await Task.Delay(500);
+                        MoveStick(ButtonType.LSTICK, Stick.CENTER, Stick.CENTER);
+                        PressButton(ButtonType.A);
+                        for (int i = 0; i < 4; i++)
+                        {
+                            if (cancel_token.IsCancellationRequested)
+                            {
+                                throw new Exception();
+                            }
+                            PressButton(ButtonType.A);
+                            await Task.Delay(50);
+                            ReleaseButton(ButtonType.A);
+                            await Task.Delay(500);
+                        }
+                        await Task.Delay(3000);
+                        for (int i = 0; i < 7; ++i)
+                        {
+
+                            if (cancel_token.IsCancellationRequested)
+                            {
+                                throw new Exception();
+                            }
+                            PressButton(ButtonType.B);
+                            await Task.Delay(100);
+                            ReleaseButton(ButtonType.B);
+                            await Task.Delay(500);
+                        }
+                        await EggFirstPoint();
+                        if (cancel_token.IsCancellationRequested)
+                        {
+                            throw new Exception();
+                        }
+                        //走る前の位置調整
+                        MoveStick(ButtonType.LSTICK, Stick.MAX, Stick.CENTER);
+                        await Task.Delay(600);
+                        MoveStick(ButtonType.LSTICK, Stick.MAX, Stick.MIN);
+                        await Task.Delay(1500);                            
+                        if (cancel_token.IsCancellationRequested)
+                        {
+                            throw new Exception();
+                        }
+                        //孵化まで走る
+                        MoveStick(ButtonType.LSTICK, Stick.MIN, Stick.MIN);
+                        MoveStick(ButtonType.RSTICK, Stick.MIN, Stick.MIN);
+                        await Task.Delay((int)((int)cycle * 3900));
+                        MoveStick(ButtonType.LSTICK, Stick.CENTER, Stick.CENTER);
+                        MoveStick(ButtonType.RSTICK, Stick.CENTER, Stick.CENTER);
+                        //孵化表示クリア
+                        for (int i = 0; i < 100; ++i)
+                        {
+                            if (cancel_token.IsCancellationRequested)
+                            {
+                                throw new Exception();
+                            }
+                            PressButton(ButtonType.B);
+                            await Task.Delay(50);
+                            ReleaseButton(ButtonType.B);
+                            await Task.Delay(100);
+                        }
+                        eggCount++;
+                        label_Eggcount.Text = "孵化数：" + eggCount;
+                        await Task.Delay(2000);
+                    }
+                    //手持ちがいっぱいになったらボックスへ
+                    PressButton(ButtonType.X);
+                    await Task.Delay(50);
+                    ReleaseButton(ButtonType.X);
+                    await Task.Delay(1050);
+                    PressButton(ButtonType.UP);
+                    await Task.Delay(50);
+                    ReleaseButton(ButtonType.UP);
+                    await Task.Delay(100);
+                    PressButton(ButtonType.RIGHT);
+                    await Task.Delay(50);
+                    ReleaseButton(ButtonType.RIGHT);
+                    await Task.Delay(100);
+                    if (cancel_token.IsCancellationRequested)
+                    {
+                        throw new Exception();
+                    }
+                    PressButton(ButtonType.A);
+                    await Task.Delay(50);
+                    ReleaseButton(ButtonType.A);
+                    await Task.Delay(1800);
+                    PressButton(ButtonType.R);
+                    await Task.Delay(50);
+                    ReleaseButton(ButtonType.R);
+                    await Task.Delay(2000);
+                    if (cancel_token.IsCancellationRequested)
+                    {
+                        throw new Exception();
+                    }
+                    PressButton(ButtonType.LEFT);
+                    await Task.Delay(50);
+                    ReleaseButton(ButtonType.LEFT);
+                    await Task.Delay(100);
+                    PressButton(ButtonType.DOWN);
+                    await Task.Delay(50);
+                    ReleaseButton(ButtonType.DOWN);
+                    for (int i = 0; i < 2; ++i)
+                    {
+                        if (cancel_token.IsCancellationRequested)
+                        {
+                            throw new Exception();
+                        }
+                        PressButton(ButtonType.Y);
+                        await Task.Delay(50);
+                        ReleaseButton(ButtonType.Y);
+                        await Task.Delay(100);
+                    }
+                    await Task.Delay(100);
+                    PressButton(ButtonType.A);
+                    await Task.Delay(50);
+                    ReleaseButton(ButtonType.A);
+                    PressButton(ButtonType.DOWN);
+                    await Task.Delay(1000);
+                    ReleaseButton(ButtonType.DOWN);
+                    if (cancel_token.IsCancellationRequested)
+                    {
+                        throw new Exception();
+                    }
+                    PressButton(ButtonType.A);
+                    await Task.Delay(50);
+                    ReleaseButton(ButtonType.A);
+                    await Task.Delay(100);
+                    PressButton(ButtonType.RIGHT);
+                    await Task.Delay(50);
+                    ReleaseButton(ButtonType.RIGHT);
+                    await Task.Delay(100);
+                    PressButton(ButtonType.UP);
+                    await Task.Delay(50);
+                    ReleaseButton(ButtonType.UP);
+                    await Task.Delay(100);
+
+                    if (line >= 6)
+                    {
+                        PressButton(ButtonType.R);
+                        await Task.Delay(50);
+                        ReleaseButton(ButtonType.R);
+                        await Task.Delay(500);
+                        line = 0;
+                        boxCount++;
+                    }
+                    if (line < 6)
+                    {
+                        for (int i = 0; i < line; i++)
+                        {
+                            PressButton(ButtonType.RIGHT);
+                            await Task.Delay(50);
+                            ReleaseButton(ButtonType.RIGHT);
+                            await Task.Delay(100);
+                        }
+                        line++;
+                    }
+                    if (cancel_token.IsCancellationRequested)
+                    {
+                        throw new Exception();
+                    }
+                    PressButton(ButtonType.A);
+                    await Task.Delay(50);
+                    ReleaseButton(ButtonType.A);
+                    await Task.Delay(500);
+                    for (int i = 0; i < 2; ++i)
+                    {
+                        if (cancel_token.IsCancellationRequested)
+                        {
+                            throw new Exception();
+                        }
+                        PressButton(ButtonType.B);
+                        await Task.Delay(50);
+                        ReleaseButton(ButtonType.B);
+                        await Task.Delay(1500);
+                    }
+                    PressButton(ButtonType.LEFT);
+                    await Task.Delay(50);
+                    ReleaseButton(ButtonType.LEFT);
+                    await Task.Delay(100);
+                    PressButton(ButtonType.DOWN);
+                    await Task.Delay(50);
+                    ReleaseButton(ButtonType.DOWN);
+                    await Task.Delay(100);
+                    PressButton(ButtonType.B);
+                    await Task.Delay(50);
+                    ReleaseButton(ButtonType.B);
+                    await Task.Delay(1500);
+                }
                 InputUnLock();
             }
             catch (Exception exception)
+            {
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// 自動レイド周回
+        /// </summary>
+        private async Task AutoRaid()
+        {
+            token_source = new CancellationTokenSource();
+            cancel_token = token_source.Token;
+            try
+            {
+                InputLock();
+                while (true)
+                {
+                    if (cancel_token.IsCancellationRequested)
+                    {
+                        throw new Exception();
+                    }
+                    MoveStick(ButtonType.RSTICK, Stick.CENTER, Stick.MIN);
+                    PressButton(ButtonType.LEFT);
+                    await Task.Delay(20);
+                    ReleaseButton(ButtonType.LEFT);
+                    PressButton(ButtonType.A);
+                    await Task.Delay(50);
+                    ReleaseButton(ButtonType.A);
+                    await Task.Delay(1000);
+                }
+            }
+            catch (Exception exception)
+            {
+                throw;
+            }
+        }
+
+
+        /// <summary>
+        /// 掘り出しもの周回
+        /// </summary>
+        private async Task Horidashimono()
+        {
+            token_source = new CancellationTokenSource();
+            cancel_token = token_source.Token;
+            InputLock();
+            try
+            {
+                while (true)
+                {
+                    await DisplayDate();
+
+                    if (cancel_token.IsCancellationRequested)
+                    {
+                        return;
+                    }
+                    for (int j = 0; j < 2; ++j)
+                    {
+                        PressButton(ButtonType.DOWN);
+                        await Task.Delay(50);
+                        ReleaseButton(ButtonType.DOWN);
+                        await Task.Delay(50);
+                        if (cancel_token.IsCancellationRequested)
+                        {
+                            throw new Exception();
+                        }
+                    }
+
+                    //Increase date
+                    await IncreaseDate(true);
+
+                    PressButton(ButtonType.HOME);
+                    await Task.Delay(50);
+                    ReleaseButton(ButtonType.HOME);
+                    await Task.Delay(1000);
+
+                    if (cancel_token.IsCancellationRequested)
+                    {
+                        throw new Exception();
+                    }
+                    PressButton(ButtonType.A);
+                    await Task.Delay(50);
+                    ReleaseButton(ButtonType.A);
+                    await Task.Delay(500);
+
+                    //話しかける
+                    for (int i = 0; i < 10; i++)
+                    {
+
+                        if (cancel_token.IsCancellationRequested)
+                        {
+                            throw new Exception();
+                        }
+                        PressButton(ButtonType.A);
+                        await Task.Delay(50);
+                        ReleaseButton(ButtonType.A);
+                        await Task.Delay(500);
+                    }
+
+                    for (int i = 0; i < 10; i++)
+                    {
+
+                        if (cancel_token.IsCancellationRequested)
+                        {
+                            throw new Exception();
+                        }
+                        PressButton(ButtonType.B);
+                        await Task.Delay(50);
+                        ReleaseButton(ButtonType.B);
+                        await Task.Delay(500);
+                    }
+                }
+            }
+            catch (Exception exception)
+            {
+                throw;
+            }
+
+        }
+
+        /// <summary>
+        /// きのみ周回
+        /// </summary>
+        private async Task Kinomi()
+        {
+            token_source = new CancellationTokenSource();
+            cancel_token = token_source.Token;
+            InputLock();
+            try { 
+                while (cancel_token.IsCancellationRequested==false)
+                {
+                    await DisplayDate();
+
+                    if (cancel_token.IsCancellationRequested)
+                    {
+                        throw new Exception();
+                    }
+                    for (int j = 0; j < 2; ++j)
+                    {
+                        PressButton(ButtonType.DOWN);
+                        await Task.Delay(50);
+                        ReleaseButton(ButtonType.DOWN);
+                        await Task.Delay(50);
+                        if (cancel_token.IsCancellationRequested)
+                        {
+                            throw new Exception();
+                        }
+                    }
+
+                    //Increase date
+                    await IncreaseDate(true);
+
+                    PressButton(ButtonType.HOME);
+                    await Task.Delay(50);
+                    ReleaseButton(ButtonType.HOME);
+                    await Task.Delay(1000);
+                    if (cancel_token.IsCancellationRequested)
+                    {
+                        throw new Exception();
+                    }
+                    PressButton(ButtonType.A);
+                    await Task.Delay(50);
+                    ReleaseButton(ButtonType.A);
+                    await Task.Delay(500);
+
+                    //木を揺らす
+                    for (int i = 0; i < 3; i++)
+                    {
+                        if (cancel_token.IsCancellationRequested)
+                        {
+                            throw new Exception();
+                        }
+                        PressButton(ButtonType.A);
+                        await Task.Delay(50);
+                        ReleaseButton(ButtonType.A);
+                        await Task.Delay(500);
+                    }
+                    await Task.Delay(3000);
+                    for (int i = 0; i < 10; i++)
+                    {
+                        if (cancel_token.IsCancellationRequested)
+                        {
+                            throw new Exception();
+                        }
+                        PressButton(ButtonType.B);
+                        await Task.Delay(50);
+                        ReleaseButton(ButtonType.B);
+                        await Task.Delay(500);
+                    }
+                }
+            }
+
+            catch (Exception exception)
+            {
+                throw;
+            }
+        }
+        /// <summary>
+        /// 無限ワット
+        /// </summary>
+        private async Task Wget()
+        {
+            token_source = new CancellationTokenSource();
+            cancel_token = token_source.Token;
+            try
+            {
+                while (true)
+                {
+                    if (cancel_token.IsCancellationRequested)
+                    {
+                        throw new Exception();
+                    }
+                    await IncreaseDateWithRaidHole();
+                }
+            }
+            catch (Exception exception)
+            {
+                throw;
+            }
+
+        }
+        /// <summary>
+        /// 羽回収
+        /// </summary>
+        private async Task CollectFeathers()
+        {
+            token_source = new CancellationTokenSource();
+            cancel_token = token_source.Token;
+            try
+            {
+
+                while (true)
+                {
+
+                    await DisplayDate();
+
+
+                    if (cancel_token.IsCancellationRequested)
+                    {
+                        throw new Exception();
+                    }
+                    for (int j = 0; j < 2; ++j)
+                    {
+                        PressButton(ButtonType.DOWN);
+                        await Task.Delay(50);
+                        ReleaseButton(ButtonType.DOWN);
+                        await Task.Delay(50);
+                    }
+
+                    //Increase date
+                    await IncreaseDate(true);
+
+                    PressButton(ButtonType.HOME);
+                    await Task.Delay(50);
+                    ReleaseButton(ButtonType.HOME);
+                    await Task.Delay(1000);
+
+                    if (cancel_token.IsCancellationRequested)
+                    {
+                        throw new Exception();
+                    }
+                    PressButton(ButtonType.A);
+                    await Task.Delay(50);
+                    ReleaseButton(ButtonType.A);
+                    await Task.Delay(500);
+
+                    PressButton(ButtonType.X);
+                    await Task.Delay(50);
+                    ReleaseButton(ButtonType.X);
+                    await Task.Delay(1050);
+
+                    if (cancel_token.IsCancellationRequested)
+                    {
+                        throw new Exception();
+                    }
+                    PressButton(ButtonType.A);
+                    await Task.Delay(50);
+                    ReleaseButton(ButtonType.A);
+                    await Task.Delay(3850);
+
+                    if (cancel_token.IsCancellationRequested)
+                    {
+                        throw new Exception();
+                    }
+                    //育て屋の前へ
+                    MoveStick(ButtonType.LSTICK, Stick.MAX, Stick.MIN);
+                    await Task.Delay(50);
+                    MoveStick(ButtonType.LSTICK, Stick.CENTER, Stick.CENTER);
+                    //await Task.Delay(100);
+
+                    for (int i = 0; i < 20; i++)
+                    {
+
+                        if (cancel_token.IsCancellationRequested)
+                        {
+                            throw new Exception();
+                        }
+                        PressButton(ButtonType.A);
+                        await Task.Delay(50);
+                        ReleaseButton(ButtonType.A);
+                        await Task.Delay(50);
+                    }
+                    await Task.Delay(1800);
+
+                    //1
+                    MoveStick(ButtonType.LSTICK, 254, 134);
+                    await Task.Delay(3035);
+                    MoveStick(ButtonType.LSTICK, Stick.CENTER, Stick.CENTER);
+                    for (int i = 0; i < 15; i++)
+                    {
+
+                        if (cancel_token.IsCancellationRequested)
+                        {
+                            throw new Exception();
+                        }
+                        PressButton(ButtonType.A);
+                        await Task.Delay(50);
+                        ReleaseButton(ButtonType.A);
+                        await Task.Delay(50);
+                    }
+
+                    //2
+                    MoveStick(ButtonType.LSTICK, 255, 80);
+                    await Task.Delay(1900);
+                    MoveStick(ButtonType.LSTICK, Stick.CENTER, Stick.CENTER);
+                    for (int i = 0; i < 15; i++)
+                    {
+
+                        if (cancel_token.IsCancellationRequested)
+                        {
+                            throw new Exception();
+                        }
+                        PressButton(ButtonType.A);
+                        await Task.Delay(50);
+                        ReleaseButton(ButtonType.A);
+                        await Task.Delay(50);
+                    }
+
+
+                    //3
+
+                    MoveStick(ButtonType.LSTICK, 254, 155);
+                    await Task.Delay(1558);
+                    MoveStick(ButtonType.LSTICK, Stick.CENTER, Stick.CENTER);
+                    for (int i = 0; i < 15; i++)
+                    {
+
+                        if (cancel_token.IsCancellationRequested)
+                        {
+                            throw new Exception();
+                        }
+                        PressButton(ButtonType.A);
+                        await Task.Delay(50);
+                        ReleaseButton(ButtonType.A);
+                        await Task.Delay(50);
+                    }
+
+                    //4
+                    MoveStick(ButtonType.LSTICK, 255, 167);
+                    await Task.Delay(1325);
+                    MoveStick(ButtonType.LSTICK, Stick.CENTER, Stick.CENTER);
+                    for (int i = 0; i < 15; i++)
+                    {
+
+                        if (cancel_token.IsCancellationRequested)
+                        {
+                            throw new Exception();
+                        }
+                        PressButton(ButtonType.A);
+                        await Task.Delay(50);
+                        ReleaseButton(ButtonType.A);
+                        await Task.Delay(50);
+                    }
+
+                    //5
+                    MoveStick(ButtonType.LSTICK, 255, 35);
+                    await Task.Delay(822);
+                    MoveStick(ButtonType.LSTICK, Stick.CENTER, Stick.CENTER);
+                    for (int i = 0; i < 15; i++)
+                    {
+
+                        if (cancel_token.IsCancellationRequested)
+                        {
+                            throw new Exception();
+                        }
+                        PressButton(ButtonType.A);
+                        await Task.Delay(50);
+                        ReleaseButton(ButtonType.A);
+                        await Task.Delay(50);
+                    }
+
+                    //6
+                    MoveStick(ButtonType.LSTICK, 255, 152);
+                    await Task.Delay(2651);
+                    MoveStick(ButtonType.LSTICK, Stick.CENTER, Stick.CENTER);
+                    for (int i = 0; i < 15; i++)
+                    {
+
+                        if (cancel_token.IsCancellationRequested)
+                        {
+                            throw new Exception();
+                        }
+                        PressButton(ButtonType.A);
+                        await Task.Delay(50);
+                        ReleaseButton(ButtonType.A);
+                        await Task.Delay(50);
+                    }
+
+                    //7
+                    MoveStick(ButtonType.LSTICK, 255, 60);
+                    await Task.Delay(1792);
+                    MoveStick(ButtonType.LSTICK, Stick.CENTER, Stick.CENTER);
+                    for (int i = 0; i < 15; i++)
+                    {
+
+                        if (cancel_token.IsCancellationRequested)
+                        {
+                            throw new Exception();
+                        }
+                        PressButton(ButtonType.A);
+                        await Task.Delay(50);
+                        ReleaseButton(ButtonType.A);
+                        await Task.Delay(50);
+                    }
+
+
+                    //8
+                    MoveStick(ButtonType.LSTICK, 255, 205);
+                    await Task.Delay(1900);
+                    MoveStick(ButtonType.LSTICK, Stick.CENTER, Stick.CENTER);
+                    for (int i = 0; i < 15; i++)
+                    {
+
+                        if (cancel_token.IsCancellationRequested)
+                        {
+                            throw new Exception();
+                        }
+                        PressButton(ButtonType.A);
+                        await Task.Delay(50);
+                        ReleaseButton(ButtonType.A);
+                        await Task.Delay(50);
+                    }
+
+                    //9
+                    MoveStick(ButtonType.LSTICK, 255, 80);
+                    await Task.Delay(1885);
+                    MoveStick(ButtonType.LSTICK, Stick.CENTER, Stick.CENTER);
+                    for (int i = 0; i < 15; i++)
+                    {
+
+                        if (cancel_token.IsCancellationRequested)
+                        {
+                            throw new Exception();
+                        }
+                        PressButton(ButtonType.A);
+                        await Task.Delay(50);
+                        ReleaseButton(ButtonType.A);
+                        await Task.Delay(50);
+                    }
+
+                    //10
+                    MoveStick(ButtonType.LSTICK, 255, 205);
+                    await Task.Delay(975);
+                    MoveStick(ButtonType.LSTICK, Stick.CENTER, Stick.CENTER);
+                    for (int i = 0; i < 15; i++)
+                    {
+
+                        if (cancel_token.IsCancellationRequested)
+                        {
+                            throw new Exception();
+                        }
+                        PressButton(ButtonType.A);
+                        await Task.Delay(50);
+                        ReleaseButton(ButtonType.A);
+                        await Task.Delay(50);
+                    }
+                }
+            }
+            catch (Exception exception)
+            {
+                throw;
+            }
+        }
+        /// <summary>
+        /// IDくじ周回
+        /// </summary>
+        private async Task IDkuji()
+        {
+            token_source = new CancellationTokenSource();
+            cancel_token = token_source.Token;
+            InputLock();
+            try
+            {
+                while (cancel_token.IsCancellationRequested == false)
+                {
+                    await DisplayDate();
+
+                    if (cancel_token.IsCancellationRequested)
+                    {
+                        throw new Exception();
+                    }
+                    for (int j = 0; j < 2; ++j)
+                    {
+                        PressButton(ButtonType.DOWN);
+                        await Task.Delay(50);
+                        ReleaseButton(ButtonType.DOWN);
+                        await Task.Delay(50);
+                        if (cancel_token.IsCancellationRequested)
+                        {
+                            throw new Exception();
+                        }
+                    }
+
+                    //Increase date
+                    await IncreaseDate(true);
+
+                    PressButton(ButtonType.HOME);
+                    await Task.Delay(50);
+                    ReleaseButton(ButtonType.HOME);
+                    await Task.Delay(1000);
+                    if (cancel_token.IsCancellationRequested)
+                    {
+                        throw new Exception();
+                    }
+                    PressButton(ButtonType.A);
+                    await Task.Delay(50);
+                    ReleaseButton(ButtonType.A);
+                    await Task.Delay(500);
+
+                    //ロトミに話しかける
+                    for (int i = 0; i < 2; i++)
+                    {
+                        if (cancel_token.IsCancellationRequested)
+                        {
+                            throw new Exception();
+                        }
+                        PressButton(ButtonType.A);
+                        await Task.Delay(100);
+                        ReleaseButton(ButtonType.A);
+                        await Task.Delay(1300);
+                    }//A2回
+                    PressButton(ButtonType.DOWN);
+                    await Task.Delay(100);
+                    ReleaseButton(ButtonType.DOWN);
+                    await Task.Delay(500);
+
+                    for (int i = 0; i < 20; i++)
+                    {
+                        if (cancel_token.IsCancellationRequested)
+                        {
+                            throw new Exception();
+                        }
+                        PressButton(ButtonType.A);
+                        await Task.Delay(50);
+                        ReleaseButton(ButtonType.A);
+                        await Task.Delay(250);
+                    }//A2回
+                    for (int i = 0; i < 35; i++)
+                    {
+                        if (cancel_token.IsCancellationRequested)
+                        {
+                            throw new Exception();
+                        }
+                        PressButton(ButtonType.B);
+                        await Task.Delay(50);
+                        ReleaseButton(ButtonType.B);
+                        await Task.Delay(250);
+                    }//A2回
+
+
+                }
+            }
+            catch (Exception exception)
+            {
+                throw;
+            }
+
+        }
+
+        //△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△
+
+        ///
+        ///各種フォームボタンへのメソッド割り当て　
+        ///
+
+
+        private async void Button_machineDateToday_click(object sender, EventArgs e)
+        {
+            try
+            {
+                InputLock();
+                await MachineDateChangeToday();
+            }
+            catch { }
+            finally {
+                InputUnLock();
+            }
+        }
+        private async void Button_machineDateReset_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                InputLock();
+            await DayReset();
+            }
+            catch { }
+            finally
+            {
+                InputUnLock();
+            }
+        }
+        private async void DateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                InputLock();
+                await DayInputChange();
+            }
+            catch { }
+            finally
+            {
+                InputUnLock();
+            }
+        }
+        private async void Button_chanselAndSave_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                InputLock();
+                await ChanselAndSave();
+            }
+            catch { }
+            finally
+            {
+                InputUnLock();
+            }
+        }
+        private async void Button_plusNDays_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                InputLock();
+                Invoke(new UpdateCountDelegate(UpdateCount), -1, int.Parse(DayTextbox.Text));
+                await PlusNDaysFast(sender, e, int.Parse(DayTextbox.Text));
+            }
+            catch { }
+            finally
+            {
+                InputUnLock();
+            }
+        }
+        private async void Button_plus1Day_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                InputLock();
+                Invoke(new UpdateCountDelegate(UpdateCount), -1, 1);
+                await PlusNDays(1);
+            }
+            catch { }
+            finally
+            {
+                InputUnLock();
+            }
+        }
+        private async void Button_plus3Days_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                InputLock();
+                Invoke(new UpdateCountDelegate(UpdateCount), -1, 3);
+                await PlusNDays(3);
+            }
+            catch { }
+            finally
+            {
+                InputUnLock();
+            }
+        }
+        private async void Button_levelUp_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                InputLock();
+                await LevelUp();
+            }
+            catch { }
+            finally
+            {
+                InputUnLock();
+            }
+        }
+        private async void Button_repeatA_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                InputLock();
+                await RepeatA();
+            }
+            catch { }
+            finally
+            {
+                InputUnLock();
+            }            
+        }
+        private async void Button_repeatB_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                InputLock();
+                await RepeatB();
+            }
+            catch { }
+            finally
+            {
+                InputUnLock();
+            }
+        }
+        private async void Button_displayStatus_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                InputLock();
+             await DisplayStatus();
+            }
+            catch { }
+            finally
+            {
+                InputUnLock();
+            }
+        }
+        private async void Button_resetSlidPlus3Days_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                InputLock();
+                Invoke(new UpdateCountDelegate(UpdateCount), -1, 3);
+                await ResetStartNdays(1);
+                await ChanselAndSave();
+                await PlusNDays(3);
+            }
+            catch { }
+            finally
+            {
+                InputUnLock();
+            }
+        }
+        private async void Button_resetPlus3Days_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                InputLock();
+                Invoke(new UpdateCountDelegate(UpdateCount), -1, 3);
+                await ResetStartNdays(3);
+            }
+            catch { }
+            finally
+            {
+                InputUnLock();
+            }
+        }
+        private async void Button_resetPlus4Days_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                InputLock();
+                Invoke(new UpdateCountDelegate(UpdateCount), -1, 4);
+                await ResetStartNdays(4);
+            }
+            catch { }
+            finally
+            {
+                InputUnLock();
+            }
+        }
+        private async void Button_resetPlus5Days_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                InputLock();
+                Invoke(new UpdateCountDelegate(UpdateCount), -1, 5);
+                await ResetStartNdays(5);
+            }
+            catch { }
+            finally
+            {
+                InputUnLock();
+            }
+        }
+        private async void Button_startRaid_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                InputLock();
+                await StartRaid_Click();
+            }
+            catch { }
+            finally
+            {
+                InputUnLock();
+            }
+        }
+        private async void Button_startRaidSelf_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                InputLock();
+                await StartRaidSelf_Click();
+            }
+            catch { }
+            finally
             {
                 InputUnLock();
             }
             
         }
-
-        private async Task StartRaidSelf_Click()
+        private async void Button_dmax1_Click(object sender, EventArgs e)
         {
-            InputLock();
-            PressButton(ButtonType.DOWN);
-            await Task.Delay(100);
-            ReleaseButton(ButtonType.DOWN);
-            await Task.Delay(200);
-            PressButton(ButtonType.A);
-            await Task.Delay(100);
-            ReleaseButton(ButtonType.A);
-            await Task.Delay(500);
-            PressButton(ButtonType.A);
-            await Task.Delay(100);
-            ReleaseButton(ButtonType.A);
-            InputUnLock();
+            try
+            {
+                InputLock();
+                await Battle_dmax1(sender, e);
+            }
+            catch { }
+            finally
+            {
+                InputUnLock();
+            }
+            
         }
-
-        private async Task StartRaid_Click()
+        private async void Button_dmax2_Click(object sender, EventArgs e)
         {
-            InputLock();
-            PressButton(ButtonType.A);
-            await Task.Delay(100);
-            ReleaseButton(ButtonType.A);
-            await Task.Delay(3500);
-            PressButton(ButtonType.UP);
-            await Task.Delay(100);
-            ReleaseButton(ButtonType.UP);
-            await Task.Delay(100);
-            PressButton(ButtonType.A);
-            await Task.Delay(100);
-            ReleaseButton(ButtonType.A);
-            InputUnLock();
+            try
+            {
+                InputLock();
+                await Battle_dmax2(sender, e);
+            }
+            catch { }
+            finally
+            {
+                InputUnLock();
+            }
         }
+        private void Button_ControllerChange(object sender, EventArgs e)
+        {
+            try
+            {
+                InputLock();
+                ControllerChange();
+            }
+            catch { }
+            finally
+            {
+                InputUnLock();
+            }
+        }
+        private async void Button_IDkuji_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                InputLock();
+                await IDkuji();
+            }
+            catch { }
+            finally
+            {
+                InputUnLock();
+            }
+        }
+        private async void Button_collectFeathers_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                InputLock();
+                await CollectFeathers();
+            }
+            catch { }
+            finally
+            {
+                InputUnLock();
+            }
+        }
+        private async void Button_Wget_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                InputLock();
+                await Wget();
+            }
+            catch { }
+            finally
+            {
+                InputUnLock();
+            }
+        }
+        private async void Button_Kinomi_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                InputLock();
+                await Kinomi();
+            }
+            catch { }
+            finally
+            {
+                InputUnLock();
+            }
+        }
+        private async void Button_BattleTower_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                InputLock();
+                await BattleTower();
+            }
+            catch { }
+            finally
+            {
+                InputUnLock();
+            }
+        }
+        private async void Button_AutoRaid_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                InputLock();
+                await AutoRaid();
+            }
+            catch { }
+            finally
+            {
+                InputUnLock();
+            }
+        }
+        private async void Button_Horidashimono_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                InputLock();
+                await Horidashimono();
+            }
+            catch { }
+            finally
+            {
+                InputUnLock();
+            }
+        }
+        private async void Button_Eggs_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                InputLock();
+                await Eggs(numericUpDown_Cycle.Value, numericUpDown_Box.Value, sender, e);
+            }
+            catch { }
+            finally
+            {
+                InputUnLock();
+            }
+        }
+        //△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△
+                    
+        /// <summary>
+        /// マクロ停止メソッド
+        /// </summary>
+        private void Button_stop_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Invoke(new UpdateCalendarDelegate(UpdateCalendar));
+                InputUnLock();
+                this.token_source.Cancel();
+                this.token_source.Cancel();
+                this.token_source.Cancel();
+                this.token_source.Cancel();
+            }
+            catch (Exception ex)
+            {
 
-        private void ContlrolChange()
+            }
+        }
+        /// <summary>
+        /// コントローラの選択が変わった時のメソッド
+        /// </summary>
+        private void ControllerChange()
         {
             if (button_xInput.Checked == true)
             {
@@ -2244,10 +3805,10 @@ namespace PokemonSWSH_SeedSearchSupport
                 array[7] = ButtonType.PLUS;
                 array[8] = ButtonType.LCLICK;
                 array[9] = ButtonType.RCLICK;
-                array[10] = ButtonType.UP;
-                array[11] = ButtonType.DOWN;
-                array[12] = ButtonType.LEFT;
-                array[13] = ButtonType.RIGHT;
+                array[10] = ButtonType.B;
+                array[11] = ButtonType.B;
+                array[12] = ButtonType.B;
+                array[13] = ButtonType.B;
                 array[14] = ButtonType.CAPTURE;
             }
             else
@@ -2267,135 +3828,6 @@ namespace PokemonSWSH_SeedSearchSupport
                 array[12] = ButtonType.B;
                 array[13] = ButtonType.B;
                 array[14] = ButtonType.B;
-            }
-        }
-
-        //△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△
-
-        ///
-        ///各種フォームボタンへのメソッド割り当て　
-        ///
-
-        private async void Button_dateToday_Click(object sender, EventArgs e)
-        {
-            await DateToday();
-        }
-
-        private async void Button_dayReset_Click(object sender, EventArgs e)
-        {
-            await DayReset();
-        }
-
-        private async void DateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-            await DayInputChange();
-        }
-        
-        private async void Button_machineDateToday_click(object sender, EventArgs e)
-        {
-            await MachineDateChangeToday();
-        }
-
-        private async void Button_chanselAndSave_Click(object sender, EventArgs e)
-        {
-            await ChanselAndSave();
-        }
-
-        private async void Button_plusNDays_Click(object sender, EventArgs e)
-        {
-            Invoke(new UpdateCountDelegate(UpdateCount), -1, int.Parse(DayTextbox.Text));
-            await PlusNDaysFast(sender, e, int.Parse(DayTextbox.Text));
-        }
-        private async void Button_plus1Day_Click(object sender, EventArgs e)
-        {
-            Invoke(new UpdateCountDelegate(UpdateCount), -1, 1);
-            await PlusNDays(1);
-        }
-        private async void Button_plus3Days_Click(object sender, EventArgs e)
-        {
-            Invoke(new UpdateCountDelegate(UpdateCount), -1, 3);
-            await PlusNDays(3);
-        }
-        private async void Button_levelUp_Click(object sender, EventArgs e)
-        {
-            await LevelUp();
-        }
-        private async void Button_repeatA_Click(object sender, EventArgs e)
-        {
-            await RepeatA();
-        }
-        private async void Button_repeatB_Click(object sender, EventArgs e)
-        {
-            await RepeatB();
-        }
-        private async void Button_displayStatus_Click(object sender, EventArgs e)
-        {
-            await DisplayStatus();
-        }
-
-        private async void Button_resetSlidPlus3Days_Click(object sender, EventArgs e)
-        {
-            Invoke(new UpdateCountDelegate(UpdateCount), -1, 3);
-            await ResetStartNdays(1);
-            await ChanselAndSave();
-            await PlusNDays(3);
-        }
-        private async void Button_resetPlus3Days_Click(object sender, EventArgs e)
-        {
-            Invoke(new UpdateCountDelegate(UpdateCount), -1, 3);
-            await ResetStartNdays(3);
-        }
-        private async void Button_resetPlus4Days_Click(object sender, EventArgs e)
-        {
-            Invoke(new UpdateCountDelegate(UpdateCount), -1, 4);
-            await ResetStartNdays(4);
-        }
-        private async void Button_resetPlus5Days_Click(object sender, EventArgs e)
-        {
-            Invoke(new UpdateCountDelegate(UpdateCount), -1, 5);
-            await ResetStartNdays(5);
-        }
-
-        private async void Button_startRaid_Click(object sender, EventArgs e)
-        {
-            await StartRaid_Click();
-        }
-        private async void Button_startRaidSelf_Click(object sender, EventArgs e)
-        {
-            await StartRaidSelf_Click();
-        }
-
-        private async void Button_dmax1_Click(object sender, EventArgs e)
-        {
-            await Battle_dmax1(sender,e);
-        }
-        private async void Button_dmax2_Click(object sender, EventArgs e)
-        {
-            await Battle_dmax2(sender, e);
-        }
-
-        private void Button_ContlrolChange(object sender, EventArgs e)
-        {
-            ContlrolChange();
-        }
-        //△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△
-
-
-
-        ///
-        ///途中停止用メソッド　　
-        ///
-        private void Button_stop_Click(object sender, EventArgs e)
-        {
-            try {
-                Invoke(new UpdateCalendarDelegate(UpdateCalendar));
-                InputUnLock();
-                // Invoke(new updateDateLabelDelegate(updateDateLabel));
-
-                this.token_source.Cancel();
-            }
-            catch (Exception ex){            
-
             }
         }
 
@@ -2429,5 +3861,9 @@ namespace PokemonSWSH_SeedSearchSupport
             return true;
         }
 
+        private void GroupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

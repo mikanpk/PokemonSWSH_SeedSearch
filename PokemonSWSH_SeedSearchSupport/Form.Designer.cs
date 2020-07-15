@@ -64,48 +64,80 @@
             this.ButtonPlus = new System.Windows.Forms.Button();
             this.ButtonHome = new System.Windows.Forms.Button();
             this.ButtonCapture = new System.Windows.Forms.Button();
-            this.Button_plus3Days = new System.Windows.Forms.Button();
-            this.Button_resetPlus4Days = new System.Windows.Forms.Button();
-            this.Button_plus1Day = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.Button_plusNDays = new System.Windows.Forms.Button();
-            this.Button_savePlus3days = new System.Windows.Forms.Button();
-            this.Button_resetPlus5Days = new System.Windows.Forms.Button();
-            this.Button_resetPlus3Days_2 = new System.Windows.Forms.Button();
-            this.Button_dmax1 = new System.Windows.Forms.Button();
-            this.Button_dmax2 = new System.Windows.Forms.Button();
-            this.Button_stop = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.Button_dayReset = new System.Windows.Forms.Button();
-            this.DateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label_count = new System.Windows.Forms.Label();
-            this.Button_dateToday = new System.Windows.Forms.Button();
-            this.Button_startRaid = new System.Windows.Forms.Button();
-            this.Button_levelUp = new System.Windows.Forms.Button();
-            this.Button_startRaidSelf = new System.Windows.Forms.Button();
-            this.Button_resetPlus3Days = new System.Windows.Forms.Button();
-            this.Button_repeatA = new System.Windows.Forms.Button();
-            this.Button_displayStatus = new System.Windows.Forms.Button();
-            this.Button_repeatB = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.DayTextbox = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label_input = new System.Windows.Forms.Label();
             this.button_xInput = new System.Windows.Forms.RadioButton();
             this.button_directInput = new System.Windows.Forms.RadioButton();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage_ransu = new System.Windows.Forms.TabPage();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.DayTextbox = new System.Windows.Forms.TextBox();
+            this.Button_plusNDays = new System.Windows.Forms.Button();
+            this.label_count = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.Button_displayStatus = new System.Windows.Forms.Button();
+            this.Button_levelUp = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.Button_startRaid = new System.Windows.Forms.Button();
+            this.Button_dmax1 = new System.Windows.Forms.Button();
+            this.Button_dmax2 = new System.Windows.Forms.Button();
+            this.Button_startRaidSelf = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.Button_resetPlus4Days = new System.Windows.Forms.Button();
+            this.Button_resetPlus5Days = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.Button_savePlus3days = new System.Windows.Forms.Button();
+            this.Button_resetPlus3Days_2 = new System.Windows.Forms.Button();
+            this.Button_resetPlus3Days = new System.Windows.Forms.Button();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.Button_plus3Days = new System.Windows.Forms.Button();
+            this.Button_plus1Day = new System.Windows.Forms.Button();
+            this.tabPage_macro = new System.Windows.Forms.TabPage();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.Button_BattleTower = new System.Windows.Forms.Button();
+            this.Button_AutoRaid = new System.Windows.Forms.Button();
+            this.Button_Wget = new System.Windows.Forms.Button();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.label_Eggcount = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.numericUpDown_Cycle = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown_Box = new System.Windows.Forms.NumericUpDown();
+            this.Button_Eggs = new System.Windows.Forms.Button();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.Button_Horidashimono = new System.Windows.Forms.Button();
+            this.Button_Kinomi = new System.Windows.Forms.Button();
+            this.Button_collectFeathers = new System.Windows.Forms.Button();
+            this.Button_IDkuji = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.DateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.Button_machineDateToday = new System.Windows.Forms.Button();
+            this.Button_machineDateReset = new System.Windows.Forms.Button();
+            this.Button_repeatB = new System.Windows.Forms.Button();
+            this.Button_stop = new System.Windows.Forms.Button();
+            this.Button_repeatA = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage_ransu.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.tabPage_macro.SuspendLayout();
+            this.groupBox9.SuspendLayout();
+            this.groupBox8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Cycle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Box)).BeginInit();
+            this.groupBox7.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // up
@@ -170,6 +202,7 @@
             this.comPortComboBox.Name = "comPortComboBox";
             this.comPortComboBox.Size = new System.Drawing.Size(75, 24);
             this.comPortComboBox.TabIndex = 5;
+            this.comPortComboBox.TabStop = false;
             this.comPortComboBox.SelectedIndexChanged += new System.EventHandler(this.comPortComboBox_SelectedIndexChanged);
             this.comPortComboBox.Click += new System.EventHandler(this.comPortComboBox_Click);
             this.comPortComboBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Keypressed);
@@ -510,40 +543,6 @@
             this.ButtonCapture.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ButtonCapture_MouseDown);
             this.ButtonCapture.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ButtonCapture_MouseUp);
             // 
-            // Button_plus3Days
-            // 
-            this.Button_plus3Days.Location = new System.Drawing.Point(1046, 135);
-            this.Button_plus3Days.Name = "Button_plus3Days";
-            this.Button_plus3Days.Size = new System.Drawing.Size(135, 35);
-            this.Button_plus3Days.TabIndex = 54;
-            this.Button_plus3Days.TabStop = false;
-            this.Button_plus3Days.Text = "+3 Days";
-            this.Button_plus3Days.UseVisualStyleBackColor = true;
-            this.Button_plus3Days.Click += new System.EventHandler(this.Button_plus3Days_Click);
-            // 
-            // Button_resetPlus4Days
-            // 
-            this.Button_resetPlus4Days.Font = new System.Drawing.Font("MS UI Gothic", 9F);
-            this.Button_resetPlus4Days.Location = new System.Drawing.Point(45, 287);
-            this.Button_resetPlus4Days.Name = "Button_resetPlus4Days";
-            this.Button_resetPlus4Days.Size = new System.Drawing.Size(184, 36);
-            this.Button_resetPlus4Days.TabIndex = 64;
-            this.Button_resetPlus4Days.TabStop = false;
-            this.Button_resetPlus4Days.Text = "5日目の個体\r\n（リセットして +4 Days）";
-            this.Button_resetPlus4Days.UseVisualStyleBackColor = true;
-            this.Button_resetPlus4Days.Click += new System.EventHandler(this.Button_resetPlus4Days_Click);
-            // 
-            // Button_plus1Day
-            // 
-            this.Button_plus1Day.Location = new System.Drawing.Point(1046, 92);
-            this.Button_plus1Day.Name = "Button_plus1Day";
-            this.Button_plus1Day.Size = new System.Drawing.Size(135, 35);
-            this.Button_plus1Day.TabIndex = 53;
-            this.Button_plus1Day.TabStop = false;
-            this.Button_plus1Day.Text = "+1 Day";
-            this.Button_plus1Day.UseVisualStyleBackColor = true;
-            this.Button_plus1Day.Click += new System.EventHandler(this.Button_plus1Day_Click);
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -552,101 +551,6 @@
             this.label4.Size = new System.Drawing.Size(26, 12);
             this.label4.TabIndex = 53;
             this.label4.Text = "Port";
-            // 
-            // Button_plusNDays
-            // 
-            this.Button_plusNDays.Location = new System.Drawing.Point(948, 93);
-            this.Button_plusNDays.Name = "Button_plusNDays";
-            this.Button_plusNDays.Size = new System.Drawing.Size(70, 21);
-            this.Button_plusNDays.TabIndex = 52;
-            this.Button_plusNDays.TabStop = false;
-            this.Button_plusNDays.Text = "日進める";
-            this.Button_plusNDays.UseVisualStyleBackColor = true;
-            this.Button_plusNDays.Click += new System.EventHandler(this.Button_plusNDays_Click);
-            // 
-            // Button_savePlus3days
-            // 
-            this.Button_savePlus3days.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.Button_savePlus3days.ForeColor = System.Drawing.Color.Black;
-            this.Button_savePlus3days.Location = new System.Drawing.Point(556, 277);
-            this.Button_savePlus3days.Name = "Button_savePlus3days";
-            this.Button_savePlus3days.Size = new System.Drawing.Size(184, 36);
-            this.Button_savePlus3days.TabIndex = 61;
-            this.Button_savePlus3days.TabStop = false;
-            this.Button_savePlus3days.Text = "レポート後次の4日目へ";
-            this.Button_savePlus3days.UseVisualStyleBackColor = true;
-            this.Button_savePlus3days.Click += new System.EventHandler(this.Button_chanselAndSave_Click);
-            this.Button_savePlus3days.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Keypressed);
-            // 
-            // Button_resetPlus5Days
-            // 
-            this.Button_resetPlus5Days.Font = new System.Drawing.Font("MS UI Gothic", 9F);
-            this.Button_resetPlus5Days.Location = new System.Drawing.Point(45, 329);
-            this.Button_resetPlus5Days.Name = "Button_resetPlus5Days";
-            this.Button_resetPlus5Days.Size = new System.Drawing.Size(184, 36);
-            this.Button_resetPlus5Days.TabIndex = 65;
-            this.Button_resetPlus5Days.TabStop = false;
-            this.Button_resetPlus5Days.Text = "6日目の個体\r\n（リセットして +5 Days）";
-            this.Button_resetPlus5Days.UseVisualStyleBackColor = true;
-            this.Button_resetPlus5Days.Click += new System.EventHandler(this.Button_resetPlus5Days_Click);
-            // 
-            // Button_resetPlus3Days_2
-            // 
-            this.Button_resetPlus3Days_2.Location = new System.Drawing.Point(556, 337);
-            this.Button_resetPlus3Days_2.Name = "Button_resetPlus3Days_2";
-            this.Button_resetPlus3Days_2.Size = new System.Drawing.Size(184, 36);
-            this.Button_resetPlus3Days_2.TabIndex = 62;
-            this.Button_resetPlus3Days_2.TabStop = false;
-            this.Button_resetPlus3Days_2.Text = "リセットし1日ずらした後の4日目へ\r\n";
-            this.Button_resetPlus3Days_2.UseVisualStyleBackColor = true;
-            this.Button_resetPlus3Days_2.Click += new System.EventHandler(this.Button_resetSlidPlus3Days_Click);
-            // 
-            // Button_dmax1
-            // 
-            this.Button_dmax1.Font = new System.Drawing.Font("MS UI Gothic", 9F);
-            this.Button_dmax1.Location = new System.Drawing.Point(184, 24);
-            this.Button_dmax1.Name = "Button_dmax1";
-            this.Button_dmax1.Size = new System.Drawing.Size(191, 54);
-            this.Button_dmax1.TabIndex = 72;
-            this.Button_dmax1.TabStop = false;
-            this.Button_dmax1.Text = "ダイマックスして\r\n1番目の技使用";
-            this.Button_dmax1.UseVisualStyleBackColor = true;
-            this.Button_dmax1.Click += new System.EventHandler(this.Button_dmax1_Click);
-            // 
-            // Button_dmax2
-            // 
-            this.Button_dmax2.Font = new System.Drawing.Font("MS UI Gothic", 9F);
-            this.Button_dmax2.Location = new System.Drawing.Point(184, 81);
-            this.Button_dmax2.Name = "Button_dmax2";
-            this.Button_dmax2.Size = new System.Drawing.Size(191, 54);
-            this.Button_dmax2.TabIndex = 73;
-            this.Button_dmax2.TabStop = false;
-            this.Button_dmax2.Text = "ダイマックスして\r\n2番目の技使用";
-            this.Button_dmax2.UseVisualStyleBackColor = true;
-            this.Button_dmax2.Click += new System.EventHandler(this.Button_dmax2_Click);
-            // 
-            // Button_stop
-            // 
-            this.Button_stop.BackColor = System.Drawing.Color.Gold;
-            this.Button_stop.Location = new System.Drawing.Point(806, 503);
-            this.Button_stop.Margin = new System.Windows.Forms.Padding(0);
-            this.Button_stop.Name = "Button_stop";
-            this.Button_stop.Size = new System.Drawing.Size(353, 84);
-            this.Button_stop.TabIndex = 0;
-            this.Button_stop.Text = "マクロ停止";
-            this.Button_stop.UseVisualStyleBackColor = false;
-            this.Button_stop.Click += new System.EventHandler(this.Button_stop_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.SystemColors.Control;
-            this.label6.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label6.Location = new System.Drawing.Point(861, 61);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(135, 13);
-            this.label6.TabIndex = 64;
-            this.label6.Text = "高速消費（ランクマ後）";
             // 
             // pictureBox1
             // 
@@ -665,246 +569,6 @@
             this.pictureBox2.Size = new System.Drawing.Size(229, 526);
             this.pictureBox2.TabIndex = 66;
             this.pictureBox2.TabStop = false;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label7.Location = new System.Drawing.Point(1043, 57);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(138, 13);
-            this.label7.TabIndex = 67;
-            this.label7.Text = "日付調整（レイド使用）";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.SystemColors.Control;
-            this.label9.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label9.Location = new System.Drawing.Point(521, 397);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(113, 13);
-            this.label9.TabIndex = 69;
-            this.label9.Text = "4日目（2体目）以降";
-            // 
-            // Button_dayReset
-            // 
-            this.Button_dayReset.Font = new System.Drawing.Font("MS UI Gothic", 9F);
-            this.Button_dayReset.Location = new System.Drawing.Point(165, 76);
-            this.Button_dayReset.Name = "Button_dayReset";
-            this.Button_dayReset.Size = new System.Drawing.Size(134, 37);
-            this.Button_dayReset.TabIndex = 44;
-            this.Button_dayReset.TabStop = false;
-            this.Button_dayReset.Text = "本体日付変更（初期値）";
-            this.Button_dayReset.UseVisualStyleBackColor = true;
-            this.Button_dayReset.Click += new System.EventHandler(this.Button_dayReset_Click);
-            // 
-            // DateTimePicker1
-            // 
-            this.DateTimePicker1.CalendarFont = new System.Drawing.Font("MS UI Gothic", 10F);
-            this.DateTimePicker1.CausesValidation = false;
-            this.DateTimePicker1.Font = new System.Drawing.Font("MS UI Gothic", 10F);
-            this.DateTimePicker1.Location = new System.Drawing.Point(533, 92);
-            this.DateTimePicker1.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
-            this.DateTimePicker1.MinimumSize = new System.Drawing.Size(4, 35);
-            this.DateTimePicker1.Name = "DateTimePicker1";
-            this.DateTimePicker1.Size = new System.Drawing.Size(137, 35);
-            this.DateTimePicker1.TabIndex = 41;
-            this.DateTimePicker1.TabStop = false;
-            this.DateTimePicker1.ValueChanged += new System.EventHandler(this.DateTimePicker1_ValueChanged);
-            this.DateTimePicker1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Keypressed);
-            // 
-            // label_count
-            // 
-            this.label_count.AutoSize = true;
-            this.label_count.Location = new System.Drawing.Point(862, 129);
-            this.label_count.Name = "label_count";
-            this.label_count.Size = new System.Drawing.Size(81, 12);
-            this.label_count.TabIndex = 73;
-            this.label_count.Text = "変更回数： 0/0";
-            this.label_count.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // Button_dateToday
-            // 
-            this.Button_dateToday.Font = new System.Drawing.Font("MS UI Gothic", 9F);
-            this.Button_dateToday.Location = new System.Drawing.Point(165, 35);
-            this.Button_dateToday.Name = "Button_dateToday";
-            this.Button_dateToday.Size = new System.Drawing.Size(134, 35);
-            this.Button_dateToday.TabIndex = 42;
-            this.Button_dateToday.TabStop = false;
-            this.Button_dateToday.Text = "本体日付変更（今日）";
-            this.Button_dateToday.UseVisualStyleBackColor = true;
-            this.Button_dateToday.Click += new System.EventHandler(this.Button_machineDateToday_click);
-            // 
-            // Button_startRaid
-            // 
-            this.Button_startRaid.BackColor = System.Drawing.SystemColors.Control;
-            this.Button_startRaid.Font = new System.Drawing.Font("MS UI Gothic", 9F);
-            this.Button_startRaid.Location = new System.Drawing.Point(104, 24);
-            this.Button_startRaid.Name = "Button_startRaid";
-            this.Button_startRaid.Size = new System.Drawing.Size(74, 114);
-            this.Button_startRaid.TabIndex = 71;
-            this.Button_startRaid.TabStop = false;
-            this.Button_startRaid.Text = "レイド開始\r\n（みんなで）";
-            this.Button_startRaid.UseVisualStyleBackColor = true;
-            this.Button_startRaid.Click += new System.EventHandler(this.Button_startRaid_Click);
-            // 
-            // Button_levelUp
-            // 
-            this.Button_levelUp.Location = new System.Drawing.Point(806, 387);
-            this.Button_levelUp.Name = "Button_levelUp";
-            this.Button_levelUp.Size = new System.Drawing.Size(156, 44);
-            this.Button_levelUp.TabIndex = 74;
-            this.Button_levelUp.TabStop = false;
-            this.Button_levelUp.Text = "レベル100にする";
-            this.Button_levelUp.UseVisualStyleBackColor = true;
-            this.Button_levelUp.Click += new System.EventHandler(this.Button_levelUp_Click);
-            // 
-            // Button_startRaidSelf
-            // 
-            this.Button_startRaidSelf.BackColor = System.Drawing.SystemColors.Control;
-            this.Button_startRaidSelf.Font = new System.Drawing.Font("MS UI Gothic", 9F);
-            this.Button_startRaidSelf.Location = new System.Drawing.Point(22, 24);
-            this.Button_startRaidSelf.Name = "Button_startRaidSelf";
-            this.Button_startRaidSelf.Size = new System.Drawing.Size(76, 114);
-            this.Button_startRaidSelf.TabIndex = 66;
-            this.Button_startRaidSelf.TabStop = false;
-            this.Button_startRaidSelf.Text = "レイド開始\r\n（ひとりで）";
-            this.Button_startRaidSelf.UseVisualStyleBackColor = true;
-            this.Button_startRaidSelf.Click += new System.EventHandler(this.Button_startRaidSelf_Click);
-            // 
-            // Button_resetPlus3Days
-            // 
-            this.Button_resetPlus3Days.Font = new System.Drawing.Font("MS UI Gothic", 9F);
-            this.Button_resetPlus3Days.Location = new System.Drawing.Point(45, 212);
-            this.Button_resetPlus3Days.Name = "Button_resetPlus3Days";
-            this.Button_resetPlus3Days.Size = new System.Drawing.Size(184, 69);
-            this.Button_resetPlus3Days.TabIndex = 63;
-            this.Button_resetPlus3Days.TabStop = false;
-            this.Button_resetPlus3Days.Text = "4日目（2体目）の個体\r\n（リセットして+3 days）";
-            this.Button_resetPlus3Days.UseVisualStyleBackColor = true;
-            this.Button_resetPlus3Days.Click += new System.EventHandler(this.Button_resetPlus3Days_Click);
-            // 
-            // Button_repeatA
-            // 
-            this.Button_repeatA.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.Button_repeatA.Location = new System.Drawing.Point(980, 387);
-            this.Button_repeatA.Name = "Button_repeatA";
-            this.Button_repeatA.Size = new System.Drawing.Size(179, 44);
-            this.Button_repeatA.TabIndex = 76;
-            this.Button_repeatA.TabStop = false;
-            this.Button_repeatA.Text = "Aボタン\r\n連打";
-            this.Button_repeatA.UseVisualStyleBackColor = false;
-            this.Button_repeatA.Click += new System.EventHandler(this.Button_repeatA_Click);
-            // 
-            // Button_displayStatus
-            // 
-            this.Button_displayStatus.Location = new System.Drawing.Point(806, 437);
-            this.Button_displayStatus.Name = "Button_displayStatus";
-            this.Button_displayStatus.Size = new System.Drawing.Size(156, 44);
-            this.Button_displayStatus.TabIndex = 75;
-            this.Button_displayStatus.TabStop = false;
-            this.Button_displayStatus.Text = "ステータス表示（2体目）";
-            this.Button_displayStatus.UseVisualStyleBackColor = true;
-            this.Button_displayStatus.Click += new System.EventHandler(this.Button_displayStatus_Click);
-            // 
-            // Button_repeatB
-            // 
-            this.Button_repeatB.BackColor = System.Drawing.Color.DarkSalmon;
-            this.Button_repeatB.Location = new System.Drawing.Point(980, 437);
-            this.Button_repeatB.Name = "Button_repeatB";
-            this.Button_repeatB.Size = new System.Drawing.Size(179, 44);
-            this.Button_repeatB.TabIndex = 77;
-            this.Button_repeatB.TabStop = false;
-            this.Button_repeatB.Text = "Bボタン\r\n連打";
-            this.Button_repeatB.UseVisualStyleBackColor = false;
-            this.Button_repeatB.Click += new System.EventHandler(this.Button_repeatB_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.SystemColors.Control;
-            this.label3.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label3.Location = new System.Drawing.Point(521, 234);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(87, 13);
-            this.label3.TabIndex = 87;
-            this.label3.Text = "4日目（1体目）";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.SystemColors.Control;
-            this.label2.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label2.Location = new System.Drawing.Point(37, 49);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(144, 13);
-            this.label2.TabIndex = 88;
-            this.label2.Text = "目的のポケモンでない場合";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.SystemColors.Control;
-            this.label8.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label8.Location = new System.Drawing.Point(548, 321);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(142, 13);
-            this.label8.TabIndex = 89;
-            this.label8.Text = "目的の個体値でない場合";
-            // 
-            // DayTextbox
-            // 
-            this.DayTextbox.CausesValidation = false;
-            this.DayTextbox.Font = new System.Drawing.Font("MS UI Gothic", 10F);
-            this.DayTextbox.Location = new System.Drawing.Point(860, 93);
-            this.DayTextbox.Name = "DayTextbox";
-            this.DayTextbox.Size = new System.Drawing.Size(86, 21);
-            this.DayTextbox.TabIndex = 51;
-            this.DayTextbox.TabStop = false;
-            this.DayTextbox.Text = "0";
-            this.DayTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.DayTextbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Keypressed);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.Button_dateToday);
-            this.groupBox1.Controls.Add(this.Button_dayReset);
-            this.groupBox1.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.groupBox1.Location = new System.Drawing.Point(511, 57);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(324, 123);
-            this.groupBox1.TabIndex = 90;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "日付設定";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.Button_resetPlus4Days);
-            this.groupBox2.Controls.Add(this.Button_resetPlus5Days);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.Button_resetPlus3Days);
-            this.groupBox2.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.groupBox2.Location = new System.Drawing.Point(511, 210);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(244, 377);
-            this.groupBox2.TabIndex = 91;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "seed特定（レイド使用）";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.Button_startRaid);
-            this.groupBox3.Controls.Add(this.Button_dmax1);
-            this.groupBox3.Controls.Add(this.Button_dmax2);
-            this.groupBox3.Controls.Add(this.Button_startRaidSelf);
-            this.groupBox3.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.groupBox3.Location = new System.Drawing.Point(784, 210);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(397, 154);
-            this.groupBox3.TabIndex = 91;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "レイドバトル";
             // 
             // label_input
             // 
@@ -926,7 +590,7 @@
             this.button_xInput.TabStop = true;
             this.button_xInput.Text = "xInput";
             this.button_xInput.UseVisualStyleBackColor = true;
-            this.button_xInput.CheckedChanged += new System.EventHandler(this.Button_ContlrolChange);
+            this.button_xInput.CheckedChanged += new System.EventHandler(this.Button_ControllerChange);
             // 
             // button_directInput
             // 
@@ -937,35 +601,695 @@
             this.button_directInput.TabIndex = 93;
             this.button_directInput.Text = "directInput";
             this.button_directInput.UseVisualStyleBackColor = true;
-            this.button_directInput.CheckedChanged += new System.EventHandler(this.Button_ContlrolChange);
+            this.button_directInput.CheckedChanged += new System.EventHandler(this.Button_ControllerChange);
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage_ransu);
+            this.tabControl1.Controls.Add(this.tabPage_macro);
+            this.tabControl1.ItemSize = new System.Drawing.Size(150, 30);
+            this.tabControl1.Location = new System.Drawing.Point(507, 162);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(652, 425);
+            this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
+            this.tabControl1.TabIndex = 94;
+            this.tabControl1.TabStop = false;
+            // 
+            // tabPage_ransu
+            // 
+            this.tabPage_ransu.BackColor = System.Drawing.Color.White;
+            this.tabPage_ransu.Controls.Add(this.groupBox5);
+            this.tabPage_ransu.Controls.Add(this.groupBox4);
+            this.tabPage_ransu.Controls.Add(this.groupBox3);
+            this.tabPage_ransu.Controls.Add(this.groupBox2);
+            this.tabPage_ransu.Controls.Add(this.groupBox6);
+            this.tabPage_ransu.Location = new System.Drawing.Point(4, 34);
+            this.tabPage_ransu.Name = "tabPage_ransu";
+            this.tabPage_ransu.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage_ransu.Size = new System.Drawing.Size(644, 387);
+            this.tabPage_ransu.TabIndex = 2;
+            this.tabPage_ransu.Text = "乱数調整";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.DayTextbox);
+            this.groupBox5.Controls.Add(this.Button_plusNDays);
+            this.groupBox5.Controls.Add(this.label_count);
+            this.groupBox5.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.groupBox5.Location = new System.Drawing.Point(274, 262);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(193, 116);
+            this.groupBox5.TabIndex = 93;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "高速消費（ランクマ後）";
+            // 
+            // DayTextbox
+            // 
+            this.DayTextbox.CausesValidation = false;
+            this.DayTextbox.Font = new System.Drawing.Font("MS UI Gothic", 10F);
+            this.DayTextbox.Location = new System.Drawing.Point(22, 37);
+            this.DayTextbox.Name = "DayTextbox";
+            this.DayTextbox.Size = new System.Drawing.Size(86, 21);
+            this.DayTextbox.TabIndex = 74;
+            this.DayTextbox.TabStop = false;
+            this.DayTextbox.Text = "0";
+            this.DayTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // Button_plusNDays
+            // 
+            this.Button_plusNDays.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.Button_plusNDays.Location = new System.Drawing.Point(114, 37);
+            this.Button_plusNDays.Name = "Button_plusNDays";
+            this.Button_plusNDays.Size = new System.Drawing.Size(70, 21);
+            this.Button_plusNDays.TabIndex = 75;
+            this.Button_plusNDays.TabStop = false;
+            this.Button_plusNDays.Text = "日進める";
+            this.toolTip1.SetToolTip(this.Button_plusNDays, "【画面】本体設定の、日時選択にフォーカスした状態\r\n【設定】\r\n・本体設定の「インターネットで時間を合わせる」をOFF\r\n\r\n");
+            this.Button_plusNDays.UseVisualStyleBackColor = true;
+            this.Button_plusNDays.Click += new System.EventHandler(this.Button_plusNDays_Click);
+            // 
+            // label_count
+            // 
+            this.label_count.AutoSize = true;
+            this.label_count.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label_count.Location = new System.Drawing.Point(20, 79);
+            this.label_count.Name = "label_count";
+            this.label_count.Size = new System.Drawing.Size(81, 12);
+            this.label_count.TabIndex = 77;
+            this.label_count.Text = "変更回数： 0/0";
+            this.label_count.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.Button_displayStatus);
+            this.groupBox4.Controls.Add(this.Button_levelUp);
+            this.groupBox4.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.groupBox4.Location = new System.Drawing.Point(274, 168);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(351, 88);
+            this.groupBox4.TabIndex = 92;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "レイド後個体値特定（レイド前に手持ちを1体にしておく）";
+            // 
+            // Button_displayStatus
+            // 
+            this.Button_displayStatus.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.Button_displayStatus.Location = new System.Drawing.Point(184, 31);
+            this.Button_displayStatus.Name = "Button_displayStatus";
+            this.Button_displayStatus.Size = new System.Drawing.Size(156, 44);
+            this.Button_displayStatus.TabIndex = 79;
+            this.Button_displayStatus.TabStop = false;
+            this.Button_displayStatus.Text = "ステータス表示";
+            this.toolTip1.SetToolTip(this.Button_displayStatus, "【画面】レイド終了後のフィールドor道具画面\r\n【設定】Xメニュー左上にバッグ、その右隣にポケモンを置く\r\n【手落ちポケモン】\r\n手持ちの2体目に、レイドで捕獲し" +
+        "たばかりのポケモンを置く\r\n※レイド前に手持ちを1匹にしておくと2体目が捕獲したポケモンになる");
+            this.Button_displayStatus.UseVisualStyleBackColor = true;
+            this.Button_displayStatus.Click += new System.EventHandler(this.Button_displayStatus_Click);
+            // 
+            // Button_levelUp
+            // 
+            this.Button_levelUp.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.Button_levelUp.Location = new System.Drawing.Point(22, 31);
+            this.Button_levelUp.Name = "Button_levelUp";
+            this.Button_levelUp.Size = new System.Drawing.Size(156, 44);
+            this.Button_levelUp.TabIndex = 78;
+            this.Button_levelUp.TabStop = false;
+            this.Button_levelUp.Text = "レベル100にする";
+            this.toolTip1.SetToolTip(this.Button_levelUp, "【画面】レイド終了後のフィールド\r\n【設定】Xメニュー左上にバッグ、その右隣にポケモンを置く\r\n【手落ちポケモン】\r\n手持ちの2体目に、レイドで捕獲したばかりのポ" +
+        "ケモンを置く\r\n※レイド前に手持ちを1匹にしておくと2体目が捕獲したポケモンになる");
+            this.Button_levelUp.UseVisualStyleBackColor = true;
+            this.Button_levelUp.Click += new System.EventHandler(this.Button_levelUp_Click);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.Button_startRaid);
+            this.groupBox3.Controls.Add(this.Button_dmax1);
+            this.groupBox3.Controls.Add(this.Button_dmax2);
+            this.groupBox3.Controls.Add(this.Button_startRaidSelf);
+            this.groupBox3.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.groupBox3.Location = new System.Drawing.Point(274, 8);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(351, 154);
+            this.groupBox3.TabIndex = 91;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "レイドバトル";
+            // 
+            // Button_startRaid
+            // 
+            this.Button_startRaid.BackColor = System.Drawing.SystemColors.Control;
+            this.Button_startRaid.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.Button_startRaid.Location = new System.Drawing.Point(104, 24);
+            this.Button_startRaid.Name = "Button_startRaid";
+            this.Button_startRaid.Size = new System.Drawing.Size(74, 114);
+            this.Button_startRaid.TabIndex = 71;
+            this.Button_startRaid.TabStop = false;
+            this.Button_startRaid.Text = "レイド開始\r\n（みんなで）";
+            this.toolTip1.SetToolTip(this.Button_startRaid, "【画面】レイド参加選択画面の状態（みんなorひとりを選ぶ画面）");
+            this.Button_startRaid.UseVisualStyleBackColor = true;
+            this.Button_startRaid.Click += new System.EventHandler(this.Button_startRaid_Click);
+            // 
+            // Button_dmax1
+            // 
+            this.Button_dmax1.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.Button_dmax1.Location = new System.Drawing.Point(184, 24);
+            this.Button_dmax1.Name = "Button_dmax1";
+            this.Button_dmax1.Size = new System.Drawing.Size(156, 54);
+            this.Button_dmax1.TabIndex = 72;
+            this.Button_dmax1.TabStop = false;
+            this.Button_dmax1.Text = "ダイマックスして\r\n1番目の技使用";
+            this.toolTip1.SetToolTip(this.Button_dmax1, "【画面】「たたかう」が表示されている状態");
+            this.Button_dmax1.UseVisualStyleBackColor = true;
+            this.Button_dmax1.Click += new System.EventHandler(this.Button_dmax1_Click);
+            // 
+            // Button_dmax2
+            // 
+            this.Button_dmax2.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.Button_dmax2.Location = new System.Drawing.Point(184, 81);
+            this.Button_dmax2.Name = "Button_dmax2";
+            this.Button_dmax2.Size = new System.Drawing.Size(156, 54);
+            this.Button_dmax2.TabIndex = 73;
+            this.Button_dmax2.TabStop = false;
+            this.Button_dmax2.Text = "ダイマックスして\r\n2番目の技使用";
+            this.toolTip1.SetToolTip(this.Button_dmax2, "【画面】「たたかう」が表示されている状態");
+            this.Button_dmax2.UseVisualStyleBackColor = true;
+            this.Button_dmax2.Click += new System.EventHandler(this.Button_dmax2_Click);
+            // 
+            // Button_startRaidSelf
+            // 
+            this.Button_startRaidSelf.BackColor = System.Drawing.SystemColors.Control;
+            this.Button_startRaidSelf.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.Button_startRaidSelf.Location = new System.Drawing.Point(22, 24);
+            this.Button_startRaidSelf.Name = "Button_startRaidSelf";
+            this.Button_startRaidSelf.Size = new System.Drawing.Size(76, 114);
+            this.Button_startRaidSelf.TabIndex = 66;
+            this.Button_startRaidSelf.TabStop = false;
+            this.Button_startRaidSelf.Text = "レイド開始\r\n（ひとりで）";
+            this.toolTip1.SetToolTip(this.Button_startRaidSelf, "【画面】レイド参加選択画面の状態（みんなorひとりを選ぶ画面）\r\n【手持ちポケモン】\r\n・レイド前に手持ちを戦闘用の1体にしておく");
+            this.Button_startRaidSelf.UseVisualStyleBackColor = true;
+            this.Button_startRaidSelf.Click += new System.EventHandler(this.Button_startRaidSelf_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.Button_resetPlus4Days);
+            this.groupBox2.Controls.Add(this.Button_resetPlus5Days);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.Button_savePlus3days);
+            this.groupBox2.Controls.Add(this.Button_resetPlus3Days_2);
+            this.groupBox2.Controls.Add(this.Button_resetPlus3Days);
+            this.groupBox2.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.groupBox2.Location = new System.Drawing.Point(10, 8);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(233, 370);
+            this.groupBox2.TabIndex = 91;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "seed特定（レイド使用）";
+            // 
+            // Button_resetPlus4Days
+            // 
+            this.Button_resetPlus4Days.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.Button_resetPlus4Days.Location = new System.Drawing.Point(27, 270);
+            this.Button_resetPlus4Days.Name = "Button_resetPlus4Days";
+            this.Button_resetPlus4Days.Size = new System.Drawing.Size(187, 36);
+            this.Button_resetPlus4Days.TabIndex = 64;
+            this.Button_resetPlus4Days.TabStop = false;
+            this.Button_resetPlus4Days.Text = "5日目の個体\r\n（リセットして +4 Days）";
+            this.toolTip1.SetToolTip(this.Button_resetPlus4Days, "【場所】どこでもOK\r\n【設定】\r\n・本体設定の「インターネットで時間を合わせる」をOFF\r\n");
+            this.Button_resetPlus4Days.UseVisualStyleBackColor = true;
+            this.Button_resetPlus4Days.Click += new System.EventHandler(this.Button_resetPlus4Days_Click);
+            // 
+            // Button_resetPlus5Days
+            // 
+            this.Button_resetPlus5Days.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.Button_resetPlus5Days.Location = new System.Drawing.Point(27, 310);
+            this.Button_resetPlus5Days.Name = "Button_resetPlus5Days";
+            this.Button_resetPlus5Days.Size = new System.Drawing.Size(187, 36);
+            this.Button_resetPlus5Days.TabIndex = 65;
+            this.Button_resetPlus5Days.TabStop = false;
+            this.Button_resetPlus5Days.Text = "6日目の個体\r\n（リセットして +5 Days）";
+            this.toolTip1.SetToolTip(this.Button_resetPlus5Days, "【場所】どこでもOK\r\n【設定】\r\n・本体設定の「インターネットで時間を合わせる」をOFF\r\n");
+            this.Button_resetPlus5Days.UseVisualStyleBackColor = true;
+            this.Button_resetPlus5Days.Click += new System.EventHandler(this.Button_resetPlus5Days_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label2.Location = new System.Drawing.Point(24, 53);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(144, 13);
+            this.label2.TabIndex = 88;
+            this.label2.Text = "目的のポケモンでない場合";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.White;
+            this.label3.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label3.Location = new System.Drawing.Point(13, 28);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(87, 13);
+            this.label3.TabIndex = 87;
+            this.label3.Text = "4日目（1体目）";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.White;
+            this.label8.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label8.Location = new System.Drawing.Point(24, 115);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(142, 13);
+            this.label8.TabIndex = 89;
+            this.label8.Text = "目的の個体値でない場合";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.White;
+            this.label9.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label9.Location = new System.Drawing.Point(13, 207);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(113, 13);
+            this.label9.TabIndex = 69;
+            this.label9.Text = "4日目（2体目）以降";
+            // 
+            // Button_savePlus3days
+            // 
+            this.Button_savePlus3days.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.Button_savePlus3days.ForeColor = System.Drawing.Color.Black;
+            this.Button_savePlus3days.Location = new System.Drawing.Point(27, 69);
+            this.Button_savePlus3days.Name = "Button_savePlus3days";
+            this.Button_savePlus3days.Size = new System.Drawing.Size(187, 36);
+            this.Button_savePlus3days.TabIndex = 61;
+            this.Button_savePlus3days.TabStop = false;
+            this.Button_savePlus3days.Text = "レポート後次の4日目へ";
+            this.toolTip1.SetToolTip(this.Button_savePlus3days, "【画面】レイド参加選択画面の状態（みんなorひとりを選ぶ画面）\r\n【設定】\r\n・本体設定の「インターネットで時間を合わせる」をOFF\r\n");
+            this.Button_savePlus3days.UseVisualStyleBackColor = true;
+            this.Button_savePlus3days.Click += new System.EventHandler(this.Button_chanselAndSave_Click);
+            // 
+            // Button_resetPlus3Days_2
+            // 
+            this.Button_resetPlus3Days_2.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.Button_resetPlus3Days_2.Location = new System.Drawing.Point(27, 129);
+            this.Button_resetPlus3Days_2.Name = "Button_resetPlus3Days_2";
+            this.Button_resetPlus3Days_2.Size = new System.Drawing.Size(187, 36);
+            this.Button_resetPlus3Days_2.TabIndex = 62;
+            this.Button_resetPlus3Days_2.TabStop = false;
+            this.Button_resetPlus3Days_2.Text = "1日ずらした後の4日目へ\r\n（リセットして+1 Day save +3 Days）\r\n";
+            this.toolTip1.SetToolTip(this.Button_resetPlus3Days_2, "【場所】どこでもOK\r\n【設定】\r\n・本体設定の「インターネットで時間を合わせる」をOFF");
+            this.Button_resetPlus3Days_2.UseVisualStyleBackColor = true;
+            this.Button_resetPlus3Days_2.Click += new System.EventHandler(this.Button_resetSlidPlus3Days_Click);
+            // 
+            // Button_resetPlus3Days
+            // 
+            this.Button_resetPlus3Days.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.Button_resetPlus3Days.Location = new System.Drawing.Point(27, 228);
+            this.Button_resetPlus3Days.Name = "Button_resetPlus3Days";
+            this.Button_resetPlus3Days.Size = new System.Drawing.Size(187, 36);
+            this.Button_resetPlus3Days.TabIndex = 63;
+            this.Button_resetPlus3Days.TabStop = false;
+            this.Button_resetPlus3Days.Text = "4日目（2体目）の個体\r\n（リセットして+3 days）";
+            this.toolTip1.SetToolTip(this.Button_resetPlus3Days, "【場所】どこでもOK\r\n【設定】\r\n・本体設定の「インターネットで時間を合わせる」をOFF\r\n");
+            this.Button_resetPlus3Days.UseVisualStyleBackColor = true;
+            this.Button_resetPlus3Days.Click += new System.EventHandler(this.Button_resetPlus3Days_Click);
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.Button_plus3Days);
+            this.groupBox6.Controls.Add(this.Button_plus1Day);
+            this.groupBox6.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.groupBox6.Location = new System.Drawing.Point(474, 262);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(151, 116);
+            this.groupBox6.TabIndex = 97;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "日付調整（レイド使用）";
+            // 
+            // Button_plus3Days
+            // 
+            this.Button_plus3Days.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.Button_plus3Days.Location = new System.Drawing.Point(17, 65);
+            this.Button_plus3Days.Name = "Button_plus3Days";
+            this.Button_plus3Days.Size = new System.Drawing.Size(118, 35);
+            this.Button_plus3Days.TabIndex = 98;
+            this.Button_plus3Days.TabStop = false;
+            this.Button_plus3Days.Text = "+3 Days";
+            this.toolTip1.SetToolTip(this.Button_plus3Days, "【画面】レイド参加選択画面の状態（みんなorひとりを選ぶ画面）\r\n【設定】\r\n・本体設定の「インターネットで時間を合わせる」をOFF");
+            this.Button_plus3Days.UseVisualStyleBackColor = true;
+            this.Button_plus3Days.Click += new System.EventHandler(this.Button_plus3Days_Click);
+            // 
+            // Button_plus1Day
+            // 
+            this.Button_plus1Day.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.Button_plus1Day.Location = new System.Drawing.Point(17, 22);
+            this.Button_plus1Day.Name = "Button_plus1Day";
+            this.Button_plus1Day.Size = new System.Drawing.Size(118, 35);
+            this.Button_plus1Day.TabIndex = 97;
+            this.Button_plus1Day.TabStop = false;
+            this.Button_plus1Day.Text = "+1 Day";
+            this.toolTip1.SetToolTip(this.Button_plus1Day, "【画面】レイド参加選択画面の状態（みんなorひとりを選ぶ画面）\r\n【設定】\r\n・本体設定の「インターネットで時間を合わせる」をOFF");
+            this.Button_plus1Day.UseVisualStyleBackColor = true;
+            this.Button_plus1Day.Click += new System.EventHandler(this.Button_plus1Day_Click);
+            // 
+            // tabPage_macro
+            // 
+            this.tabPage_macro.BackColor = System.Drawing.Color.White;
+            this.tabPage_macro.Controls.Add(this.groupBox9);
+            this.tabPage_macro.Controls.Add(this.groupBox8);
+            this.tabPage_macro.Controls.Add(this.groupBox7);
+            this.tabPage_macro.Location = new System.Drawing.Point(4, 34);
+            this.tabPage_macro.Name = "tabPage_macro";
+            this.tabPage_macro.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage_macro.Size = new System.Drawing.Size(644, 387);
+            this.tabPage_macro.TabIndex = 3;
+            this.tabPage_macro.Text = "便利マクロ";
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.Button_BattleTower);
+            this.groupBox9.Controls.Add(this.Button_AutoRaid);
+            this.groupBox9.Controls.Add(this.Button_Wget);
+            this.groupBox9.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.groupBox9.Location = new System.Drawing.Point(306, 8);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(269, 181);
+            this.groupBox9.TabIndex = 8;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "そのほか";
+            // 
+            // Button_BattleTower
+            // 
+            this.Button_BattleTower.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.Button_BattleTower.Location = new System.Drawing.Point(16, 29);
+            this.Button_BattleTower.Name = "Button_BattleTower";
+            this.Button_BattleTower.Size = new System.Drawing.Size(113, 63);
+            this.Button_BattleTower.TabIndex = 2;
+            this.Button_BattleTower.TabStop = false;
+            this.Button_BattleTower.Text = "バトルタワー周回";
+            this.toolTip1.SetToolTip(this.Button_BattleTower, "【場所】バトルタワー受付にAボタンで話しかけられる状態\r\n【ポケモン】レンタルチーム可\r\n・技は1つのみにし、できればPPを増やす\r\n　ザシアン＠くちたけん\r\n　" +
+        "　技：アイアンヘッド（きょじゅうざん）\r\n　ウオノラゴン＠こだわりスカーフ\r\n　　技：エラがみ　\r\n　ムゲンダイナ＠こだわりメガネ\r\n　　技：ダイマックスほう\r" +
+        "\n");
+            this.Button_BattleTower.UseVisualStyleBackColor = true;
+            this.Button_BattleTower.Click += new System.EventHandler(this.Button_BattleTower_Click);
+            // 
+            // Button_AutoRaid
+            // 
+            this.Button_AutoRaid.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.Button_AutoRaid.Location = new System.Drawing.Point(141, 29);
+            this.Button_AutoRaid.Name = "Button_AutoRaid";
+            this.Button_AutoRaid.Size = new System.Drawing.Size(113, 63);
+            this.Button_AutoRaid.TabIndex = 3;
+            this.Button_AutoRaid.TabStop = false;
+            this.Button_AutoRaid.Text = "自動レイドバトル";
+            this.toolTip1.SetToolTip(this.Button_AutoRaid, "【場所】巣穴の前\r\n【持ち物】\r\n・大量のねがいのかたまり\r\n・大量のボールを\r\n　※道具一覧で、モンスターボールの上に表示されるボールが使用される（要並び替え）" +
+        "\r\n【手持ちポケモン】\r\nその巣穴で出現するポケモンを倒せるポケモン1体のみ\r\n・技は1番上を使用\r\n");
+            this.Button_AutoRaid.UseVisualStyleBackColor = true;
+            this.Button_AutoRaid.Click += new System.EventHandler(this.Button_AutoRaid_Click);
+            // 
+            // Button_Wget
+            // 
+            this.Button_Wget.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.Button_Wget.Location = new System.Drawing.Point(16, 98);
+            this.Button_Wget.Name = "Button_Wget";
+            this.Button_Wget.Size = new System.Drawing.Size(113, 64);
+            this.Button_Wget.TabIndex = 1;
+            this.Button_Wget.TabStop = false;
+            this.Button_Wget.Text = "無限W稼ぎ\r\n（レイド使用）";
+            this.toolTip1.SetToolTip(this.Button_Wget, "【場所】ねがいのかたまりを投げ込んだ巣穴の前\r\n【設定】\r\n・本体設定の「インターネットで時間を合わせる」をOFF");
+            this.Button_Wget.UseVisualStyleBackColor = true;
+            this.Button_Wget.Click += new System.EventHandler(this.Button_Wget_Click);
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.label_Eggcount);
+            this.groupBox8.Controls.Add(this.label5);
+            this.groupBox8.Controls.Add(this.label1);
+            this.groupBox8.Controls.Add(this.numericUpDown_Cycle);
+            this.groupBox8.Controls.Add(this.numericUpDown_Box);
+            this.groupBox8.Controls.Add(this.Button_Eggs);
+            this.groupBox8.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.groupBox8.Location = new System.Drawing.Point(10, 207);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(223, 171);
+            this.groupBox8.TabIndex = 7;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "タマゴ孵化（ワイルドエリア）";
+            // 
+            // label_Eggcount
+            // 
+            this.label_Eggcount.AutoSize = true;
+            this.label_Eggcount.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.label_Eggcount.Location = new System.Drawing.Point(15, 96);
+            this.label_Eggcount.Name = "label_Eggcount";
+            this.label_Eggcount.Size = new System.Drawing.Size(53, 12);
+            this.label_Eggcount.TabIndex = 9;
+            this.label_Eggcount.Text = "孵化数：0";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.label5.Location = new System.Drawing.Point(15, 61);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(40, 12);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "BOX数";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.label1.Location = new System.Drawing.Point(15, 30);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(66, 12);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "孵化サイクル";
+            // 
+            // numericUpDown_Cycle
+            // 
+            this.numericUpDown_Cycle.Font = new System.Drawing.Font("MS UI Gothic", 12F);
+            this.numericUpDown_Cycle.Location = new System.Drawing.Point(109, 24);
+            this.numericUpDown_Cycle.Maximum = new decimal(new int[] {
+            8000,
+            0,
+            0,
+            0});
+            this.numericUpDown_Cycle.Name = "numericUpDown_Cycle";
+            this.numericUpDown_Cycle.Size = new System.Drawing.Size(98, 23);
+            this.numericUpDown_Cycle.TabIndex = 4;
+            this.numericUpDown_Cycle.TabStop = false;
+            this.numericUpDown_Cycle.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numericUpDown_Cycle.Value = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            // 
+            // numericUpDown_Box
+            // 
+            this.numericUpDown_Box.Font = new System.Drawing.Font("MS UI Gothic", 12F);
+            this.numericUpDown_Box.Location = new System.Drawing.Point(109, 53);
+            this.numericUpDown_Box.Name = "numericUpDown_Box";
+            this.numericUpDown_Box.Size = new System.Drawing.Size(98, 23);
+            this.numericUpDown_Box.TabIndex = 6;
+            this.numericUpDown_Box.TabStop = false;
+            this.numericUpDown_Box.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numericUpDown_Box.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // Button_Eggs
+            // 
+            this.Button_Eggs.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.Button_Eggs.Location = new System.Drawing.Point(63, 116);
+            this.Button_Eggs.Name = "Button_Eggs";
+            this.Button_Eggs.Size = new System.Drawing.Size(144, 36);
+            this.Button_Eggs.TabIndex = 5;
+            this.Button_Eggs.TabStop = false;
+            this.Button_Eggs.Text = "孵化開始";
+            this.toolTip1.SetToolTip(this.Button_Eggs, "【場所】ワイルドエリア預かり屋の前\r\n【設定】\r\n・空ボックスを用意\r\n・Xを押したときにタウンマップが選択されている\r\n・タウンマップの右上に「ポケモン」\r\n【" +
+        "手持ちポケモン】\r\n・特性「ほのおのからだ」1匹のみ\r\n");
+            this.Button_Eggs.UseVisualStyleBackColor = true;
+            this.Button_Eggs.Click += new System.EventHandler(this.Button_Eggs_Click);
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.Button_Horidashimono);
+            this.groupBox7.Controls.Add(this.Button_Kinomi);
+            this.groupBox7.Controls.Add(this.Button_collectFeathers);
+            this.groupBox7.Controls.Add(this.Button_IDkuji);
+            this.groupBox7.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.groupBox7.Location = new System.Drawing.Point(10, 8);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(272, 181);
+            this.groupBox7.TabIndex = 0;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "ランクマ後";
+            // 
+            // Button_Horidashimono
+            // 
+            this.Button_Horidashimono.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.Button_Horidashimono.Location = new System.Drawing.Point(143, 98);
+            this.Button_Horidashimono.Name = "Button_Horidashimono";
+            this.Button_Horidashimono.Size = new System.Drawing.Size(113, 64);
+            this.Button_Horidashimono.TabIndex = 3;
+            this.Button_Horidashimono.TabStop = false;
+            this.Button_Horidashimono.Text = "掘り出し物市";
+            this.toolTip1.SetToolTip(this.Button_Horidashimono, "・ラテラルタウン\r\n・掘り出し物屋の前");
+            this.Button_Horidashimono.UseVisualStyleBackColor = true;
+            this.Button_Horidashimono.Click += new System.EventHandler(this.Button_Horidashimono_Click);
+            // 
+            // Button_Kinomi
+            // 
+            this.Button_Kinomi.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.Button_Kinomi.Location = new System.Drawing.Point(17, 98);
+            this.Button_Kinomi.Name = "Button_Kinomi";
+            this.Button_Kinomi.Size = new System.Drawing.Size(113, 64);
+            this.Button_Kinomi.TabIndex = 2;
+            this.Button_Kinomi.TabStop = false;
+            this.Button_Kinomi.Text = "きのみ回収";
+            this.toolTip1.SetToolTip(this.Button_Kinomi, "【場所】木に向いた状態\r\n【設定】\r\n・本体設定の「インターネットで時間を合わせる」をOFF\r\n");
+            this.Button_Kinomi.UseVisualStyleBackColor = true;
+            this.Button_Kinomi.Click += new System.EventHandler(this.Button_Kinomi_Click);
+            // 
+            // Button_collectFeathers
+            // 
+            this.Button_collectFeathers.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.Button_collectFeathers.Location = new System.Drawing.Point(143, 28);
+            this.Button_collectFeathers.Name = "Button_collectFeathers";
+            this.Button_collectFeathers.Size = new System.Drawing.Size(113, 64);
+            this.Button_collectFeathers.TabIndex = 1;
+            this.Button_collectFeathers.TabStop = false;
+            this.Button_collectFeathers.Text = "羽回収";
+            this.toolTip1.SetToolTip(this.Button_collectFeathers, "【場所】5番道路（自転車に乗る）\r\n【設定】\r\n・本体設定の「インターネットで時間を合わせる」をOFF\r\n");
+            this.Button_collectFeathers.UseVisualStyleBackColor = true;
+            this.Button_collectFeathers.Click += new System.EventHandler(this.Button_collectFeathers_Click);
+            // 
+            // Button_IDkuji
+            // 
+            this.Button_IDkuji.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.Button_IDkuji.Location = new System.Drawing.Point(17, 28);
+            this.Button_IDkuji.Name = "Button_IDkuji";
+            this.Button_IDkuji.Size = new System.Drawing.Size(113, 64);
+            this.Button_IDkuji.TabIndex = 0;
+            this.Button_IDkuji.TabStop = false;
+            this.Button_IDkuji.Text = "IDくじ";
+            this.toolTip1.SetToolTip(this.Button_IDkuji, "【場所】ロトミに向いた状態\r\n【設定】\r\n・本体設定の「インターネットで時間を合わせる」をOFF\r\n");
+            this.Button_IDkuji.UseVisualStyleBackColor = true;
+            this.Button_IDkuji.Click += new System.EventHandler(this.Button_IDkuji_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.DateTimePicker1);
+            this.groupBox1.Controls.Add(this.Button_machineDateToday);
+            this.groupBox1.Controls.Add(this.Button_machineDateReset);
+            this.groupBox1.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.groupBox1.Location = new System.Drawing.Point(507, 52);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(275, 104);
+            this.groupBox1.TabIndex = 95;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "日付設定";
+            this.groupBox1.Enter += new System.EventHandler(this.GroupBox1_Enter);
+            // 
+            // DateTimePicker1
+            // 
+            this.DateTimePicker1.CalendarFont = new System.Drawing.Font("MS UI Gothic", 10F);
+            this.DateTimePicker1.CausesValidation = false;
+            this.DateTimePicker1.Font = new System.Drawing.Font("MS UI Gothic", 10F);
+            this.DateTimePicker1.Location = new System.Drawing.Point(10, 19);
+            this.DateTimePicker1.MaxDate = new System.DateTime(2060, 12, 31, 0, 0, 0, 0);
+            this.DateTimePicker1.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            this.DateTimePicker1.MinimumSize = new System.Drawing.Size(4, 35);
+            this.DateTimePicker1.Name = "DateTimePicker1";
+            this.DateTimePicker1.Size = new System.Drawing.Size(137, 35);
+            this.DateTimePicker1.TabIndex = 45;
+            this.DateTimePicker1.TabStop = false;
+            this.DateTimePicker1.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            this.DateTimePicker1.ValueChanged += new System.EventHandler(this.DateTimePicker1_ValueChanged);
+            // 
+            // Button_machineDateToday
+            // 
+            this.Button_machineDateToday.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.Button_machineDateToday.Location = new System.Drawing.Point(153, 19);
+            this.Button_machineDateToday.Name = "Button_machineDateToday";
+            this.Button_machineDateToday.Size = new System.Drawing.Size(105, 35);
+            this.Button_machineDateToday.TabIndex = 42;
+            this.Button_machineDateToday.TabStop = false;
+            this.Button_machineDateToday.Text = "本体日付変更\r\n（今日）";
+            this.toolTip1.SetToolTip(this.Button_machineDateToday, "ゲーム画面を表示した上でクリック");
+            this.Button_machineDateToday.UseVisualStyleBackColor = true;
+            this.Button_machineDateToday.Click += new System.EventHandler(this.Button_machineDateToday_click);
+            // 
+            // Button_machineDateReset
+            // 
+            this.Button_machineDateReset.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.Button_machineDateReset.Location = new System.Drawing.Point(153, 60);
+            this.Button_machineDateReset.Name = "Button_machineDateReset";
+            this.Button_machineDateReset.Size = new System.Drawing.Size(105, 37);
+            this.Button_machineDateReset.TabIndex = 44;
+            this.Button_machineDateReset.TabStop = false;
+            this.Button_machineDateReset.Text = "本体日付変更\r\n（2000/1/1）";
+            this.toolTip1.SetToolTip(this.Button_machineDateReset, "ゲーム画面を表示した上でクリック");
+            this.Button_machineDateReset.UseVisualStyleBackColor = true;
+            this.Button_machineDateReset.Click += new System.EventHandler(this.Button_machineDateReset_Click);
+            // 
+            // Button_repeatB
+            // 
+            this.Button_repeatB.BackColor = System.Drawing.Color.DarkSalmon;
+            this.Button_repeatB.Location = new System.Drawing.Point(792, 111);
+            this.Button_repeatB.Name = "Button_repeatB";
+            this.Button_repeatB.Size = new System.Drawing.Size(150, 44);
+            this.Button_repeatB.TabIndex = 98;
+            this.Button_repeatB.TabStop = false;
+            this.Button_repeatB.Text = "Bボタン\r\n連打";
+            this.Button_repeatB.UseVisualStyleBackColor = false;
+            this.Button_repeatB.Click += new System.EventHandler(this.Button_repeatB_Click);
+            // 
+            // Button_stop
+            // 
+            this.Button_stop.BackColor = System.Drawing.Color.Gold;
+            this.Button_stop.Location = new System.Drawing.Point(945, 61);
+            this.Button_stop.Margin = new System.Windows.Forms.Padding(0);
+            this.Button_stop.Name = "Button_stop";
+            this.Button_stop.Size = new System.Drawing.Size(210, 94);
+            this.Button_stop.TabIndex = 96;
+            this.Button_stop.Text = "マクロ停止";
+            this.Button_stop.UseVisualStyleBackColor = false;
+            this.Button_stop.Click += new System.EventHandler(this.Button_stop_Click);
+            // 
+            // Button_repeatA
+            // 
+            this.Button_repeatA.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.Button_repeatA.Location = new System.Drawing.Point(792, 61);
+            this.Button_repeatA.Name = "Button_repeatA";
+            this.Button_repeatA.Size = new System.Drawing.Size(150, 44);
+            this.Button_repeatA.TabIndex = 97;
+            this.Button_repeatA.TabStop = false;
+            this.Button_repeatA.Text = "Aボタン\r\n連打";
+            this.Button_repeatA.UseVisualStyleBackColor = false;
+            this.Button_repeatA.Click += new System.EventHandler(this.Button_repeatA_Click);
             // 
             // PokemonSWSH_SeedSearchSupport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1206, 611);
+            this.ClientSize = new System.Drawing.Size(1167, 606);
+            this.Controls.Add(this.Button_repeatB);
+            this.Controls.Add(this.Button_stop);
+            this.Controls.Add(this.Button_repeatA);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.button_directInput);
             this.Controls.Add(this.button_xInput);
-            this.Controls.Add(this.DayTextbox);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label_input);
-            this.Controls.Add(this.Button_repeatB);
-            this.Controls.Add(this.Button_displayStatus);
-            this.Controls.Add(this.Button_repeatA);
-            this.Controls.Add(this.Button_levelUp);
-            this.Controls.Add(this.label_count);
-            this.Controls.Add(this.DateTimePicker1);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.Button_stop);
-            this.Controls.Add(this.Button_resetPlus3Days_2);
-            this.Controls.Add(this.Button_savePlus3days);
-            this.Controls.Add(this.Button_plusNDays);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.Button_plus1Day);
-            this.Controls.Add(this.Button_plus3Days);
             this.Controls.Add(this.ButtonCapture);
             this.Controls.Add(this.ButtonHome);
             this.Controls.Add(this.ButtonPlus);
@@ -1001,9 +1325,6 @@
             this.Controls.Add(this.up);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PokemonSWSH_SeedSearchSupport";
@@ -1011,10 +1332,23 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.groupBox1.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage_ransu.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
+            this.groupBox6.ResumeLayout(false);
+            this.tabPage_macro.ResumeLayout(false);
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Cycle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Box)).EndInit();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1056,43 +1390,64 @@
         private System.Windows.Forms.Button ButtonPlus;
         private System.Windows.Forms.Button ButtonHome;
         private System.Windows.Forms.Button ButtonCapture;
-        private System.Windows.Forms.Button Button_plus3Days;
-        private System.Windows.Forms.Button Button_resetPlus4Days;
-        private System.Windows.Forms.Button Button_plus1Day;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button Button_plusNDays;
-        private System.Windows.Forms.Button Button_savePlus3days;
-        private System.Windows.Forms.Button Button_resetPlus5Days;
-        private System.Windows.Forms.Button Button_resetPlus3Days_2;
-        private System.Windows.Forms.Button Button_dmax1;
-        private System.Windows.Forms.Button Button_dmax2;
-        private System.Windows.Forms.Button Button_stop;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button Button_dayReset;
-        private System.Windows.Forms.DateTimePicker DateTimePicker1;
-        private System.Windows.Forms.Label label_count;
-        private System.Windows.Forms.Button Button_dateToday;
-        private System.Windows.Forms.Button Button_startRaid;
-        private System.Windows.Forms.Button Button_levelUp;
-        private System.Windows.Forms.Button Button_startRaidSelf;
-        private System.Windows.Forms.Button Button_resetPlus3Days;
-        private System.Windows.Forms.Button Button_repeatA;
-        private System.Windows.Forms.Button Button_displayStatus;
-        private System.Windows.Forms.Button Button_repeatB;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox DayTextbox;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label_input;
         private System.Windows.Forms.RadioButton button_xInput;
         private System.Windows.Forms.RadioButton button_directInput;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage_ransu;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button Button_startRaid;
+        private System.Windows.Forms.Button Button_dmax1;
+        private System.Windows.Forms.Button Button_dmax2;
+        private System.Windows.Forms.Button Button_startRaidSelf;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button Button_savePlus3days;
+        private System.Windows.Forms.Button Button_resetPlus3Days_2;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button Button_resetPlus4Days;
+        private System.Windows.Forms.Button Button_resetPlus5Days;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button Button_resetPlus3Days;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DateTimePicker DateTimePicker1;
+        private System.Windows.Forms.Button Button_machineDateToday;
+        private System.Windows.Forms.Button Button_machineDateReset;
+        private System.Windows.Forms.Button Button_repeatB;
+        private System.Windows.Forms.Button Button_stop;
+        private System.Windows.Forms.Button Button_repeatA;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.TextBox DayTextbox;
+        private System.Windows.Forms.Button Button_plusNDays;
+        private System.Windows.Forms.Label label_count;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Button Button_displayStatus;
+        private System.Windows.Forms.Button Button_levelUp;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.Button Button_plus3Days;
+        private System.Windows.Forms.Button Button_plus1Day;
+        private System.Windows.Forms.TabPage tabPage_macro;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.Button Button_IDkuji;
+        private System.Windows.Forms.Button Button_collectFeathers;
+        private System.Windows.Forms.Button Button_Wget;
+        private System.Windows.Forms.Button Button_Kinomi;
+        private System.Windows.Forms.Button Button_BattleTower;
+        private System.Windows.Forms.Button Button_AutoRaid;
+        private System.Windows.Forms.Button Button_Horidashimono;
+        private System.Windows.Forms.NumericUpDown numericUpDown_Box;
+        private System.Windows.Forms.Button Button_Eggs;
+        private System.Windows.Forms.NumericUpDown numericUpDown_Cycle;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label_Eggcount;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.GroupBox groupBox9;
     }
 }
 
